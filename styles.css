@@ -1,0 +1,161 @@
+/* Reset styles */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+
+  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    min-block-size: 100vh;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    letter-spacing: inherit;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+@layer base {
+  :root {
+    --clr-hover: #545c74;
+  }
+
+  @font-face {
+    font-family: "Source Sans";
+    src: url("/resources/fonts/SourceSans3-Italic-VariableFont_wght.ttf")
+      format("truetype-variations");
+    font-weight: 200 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Source Sans";
+    src: url("/resources/fonts/SourceSans3-VariableFont_wght.ttf")
+      format("truetype-variations");
+    font-weight: 200 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: "Source Sans", Helvetica, Arial, sans-serif;
+  }
+
+  body {
+    background-color: #000e29;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 0.75px;
+  }
+
+  .wrapper {
+    background-color: #1c2841;
+  }
+
+  header button {
+    display: flex;
+    align-items: center;
+    background-color: unset;
+    border: unset;
+    color: white;
+  }
+}
+
+@layer layout {
+  .wrapper {
+    max-width: 984px;
+    margin-inline: auto;
+    padding: 10px 60px;
+
+    /* to prevent padding from affecting the width */
+    box-sizing: content-box;
+  }
+}
+
+/* Utility */
+@layer utilities {
+  h3 {
+    font-size: 2rem;
+  }
+
+  .h3 {
+    font-size: 1.8rem;
+  }
+}

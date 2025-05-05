@@ -1,0 +1,2 @@
+dev:
+	serve -s .

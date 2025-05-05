@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      tagesschau.de - die erste Adresse für Nachrichten und Information |
+      tagesschau.de
+    </title>
+
+    <script src="app.js" defer type="module"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="app.webmanifest" />
+    <link rel="icon" href="resources/svg/logo.svg" />
+  </head>
+
+  <body>
+    <header
+      class="wrapper"
+      style="display: grid; grid-template-columns: 1fr 1fr 1fr"
+    >
+      <a href="/" style="display: flex; align-items: center">
+        <img
+          src="resources/svg/logo.svg"
+          width="60"
+          alt=""
+          aria-hidden="true"
+        />
+        <span class="h3" style="padding-left: 10px; font-weight: 300"
+          >tages<b style="font-weight: 600">schau</b></span
+        >
+      </a>
+      <button style="justify-self: center">
+        <span style="padding-right: 6px">Sendung verpasst?</span>
+        <span style="color: white">
+          <img
+            src="resources/svg/play.svg"
+            width="38"
+            alt=""
+            aria-hidden="true"
+          />
+        </span>
+      </button>
+      <button style="padding: 10px; justify-self: end">
+        <img
+          src="resources/svg/burger.svg"
+          width="36"
+          alt=""
+          aria-hidden="true"
+        />
+      </button>
+    </header>
+
+    <main></main>
+
+    <template id="home-page-template">
+    </template>
+
+    <template id="contact-page-template">
+      <section class="wrapper">
+
+      </section>
+    </template>
+
+    <template id="contact-programs-page-template">
+      <form>
+
+      </form>
+    </template>
+
+    <footer class="wrapper">
+      <nav>
+        <footer-accordion
+          title="Service"
+          links='[
+              {"href":"/archiv/allemeldungen","text":"7-Tage-Überblick"},
+              {"href":"https://meta.tagesschau.de","text":"Ihre Meinung"},
+              {"href":"/infoservices","text":"Wo Sie uns sonst noch finden"}
+            ]'
+        >
+        </footer-accordion>
+
+        <footer-accordion
+          title="tagesschau.de"
+          links='[
+                {"href":"/inland","text":"Inland"},
+                {"href":"/ausland","text":"Ausland"},
+                {"href":"/wirtschaft","text":"Wirtschaft"},
+                {"href":"/wissen","text":"Wissen"},
+                {"href":"/investigativ","text":"Investigativ"},
+                {"href":"/faktenfinder","text":"faktenfinder"},
+                {"href":"/wetter","text":"Wetter"},
+                {"href":"/multimedia","text":"Videos und Audios"},
+                {"href":"/multimedia/livestreams/livestream1","text":"tagesschau24 im Livestream"}
+            ]'
+        >
+        </footer-accordion>
+
+        <footer-accordion
+          title="ARD Angebote"
+          links='[
+                {"href":"https://www.sportschau.de/","text":"Sportschau"},
+                {"href":"https://www.ardmediathek.de","text":"Mediathek"},
+                {"href":"https://www.ardaudiothek.de/","text":"Audiothek"},
+                {"href":"https://www.kika.de/index.html","text":"KiKA"}
+            ]'
+        >
+        </footer-accordion>
+
+        <footer-accordion
+          title="Rundfunkanstalten"
+          links='[
+                {"href":"https://www.br.de/index.html","text":"Bayerischer Rundfunk"},
+                {"href":"https://www.hessenschau.de/index.html","text":"Hessischer Rundfunk"},
+                {"href":"https://www.mdr.de/nachrichten/index.html","text":"Mitteldeutscher Rundfunk"},
+                {"href":"https://www.ndr.de/","text":"Norddeutscher Rundfunk"},
+                {"href":"https://www.butenunbinnen.de/","text":"Radio Bremen"},
+                {"href":"https://www.rbb24.de/","text":"Rundfunk Berlin-Brandenburg"},
+                {"href":"https://www.sr.de/sr/home/index.html","text":"Saarländischer Rundfunk"},
+                {"href":"https://www.swr.de/","text":"Südwestrundfunk"},
+                {"href":"https://www1.wdr.de/index.html","text":"Westdeutscher Rundfunk"}
+            ]'
+          isLast="true"
+        >
+        </footer-accordion>
+
+        <ul
+          style="
+            list-style-type: none;
+            padding-left: 8px;
+            margin-bottom: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+          "
+        >
+          <li>
+            <a href="/impressum">Impressum</a>
+          </li>
+          <li>
+            <a href="/kontakt">So erreichen Sie uns</a>
+          </li>
+          <li>
+            <a href="/datenschutz">Datenschutzerklärung</a>
+          </li>
+          <li>
+            <a href="https://www.tagesschau.de/"
+              >Bildrechte</a
+            >
+          </li>
+        </ul>
+
+        <a
+          href="https://www.ard.de"
+          aria-label="Zum Online-Portal der ARD"
+          style="display: block; margin-left: auto; width: fit-content"
+        >
+          <img
+            src="/resources/svg/logo-xl.svg"
+            width="170"
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
+      </nav>
+
+      <div style="margin-top: 30px; font-weight: 300; border-top: 1px solid var(--clr-hover)">
+        <small>
+          © 2025 Phil Pieper. This is a non-commercial, scientific recreation of
+          the Tagesschau page for educational purposes only. All original rights
+          to content and design belong to ARD/tagesschau.de.
+        </small>
+      </div>
+      </footer>
+    </footer>
+  </body>
+</html>

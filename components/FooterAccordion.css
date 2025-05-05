@@ -1,0 +1,44 @@
+details {
+  border-top: 1px solid var(--clr-hover);
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 8px 12px;
+  list-style: none;
+}
+
+summary:hover {
+  background-color: var(--clr-hover);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style-type: none;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+img {
+  transition: transform 0.3s;
+}
+
+details[open] {
+  padding-bottom: 20px;
+}
+
+details[open] summary img {
+  transform: rotate(180deg);
+}
