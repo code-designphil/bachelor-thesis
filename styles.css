@@ -92,10 +92,6 @@
 }
 
 @layer base {
-  :root {
-    --clr-hover: #545c74;
-  }
-
   @font-face {
     font-family: "Source Sans";
     src: url("/resources/fonts/SourceSans3-Italic-VariableFont_wght.ttf")
@@ -125,10 +121,6 @@
     letter-spacing: 0.75px;
   }
 
-  .wrapper {
-    background-color: #1c2841;
-  }
-
   header button {
     display: flex;
     align-items: center;
@@ -151,11 +143,19 @@
 
 /* Utility */
 @layer utilities {
+  :root {
+    --signature-color: #1c2841;
+  }
+
   h3 {
     font-size: 2rem;
   }
 
   .h3 {
     font-size: 1.8rem;
+  }
+
+  .bg-signature {
+    background-color: var(--signature-color);
   }
 }

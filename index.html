@@ -17,7 +17,7 @@
 
   <body>
     <header
-      class="wrapper"
+      class="wrapper bg-signature"
       style="display: grid; grid-template-columns: 1fr 1fr 1fr"
     >
       <a href="/" style="display: flex; align-items: center">
@@ -42,7 +42,13 @@
           />
         </span>
       </button>
-      <button style="padding: 10px; justify-self: end">
+      <button
+        style="padding: 10px; justify-self: end"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-haspopup="true"
+        onclick="handleBurgerMenuClick()"
+      >
         <img
           src="resources/svg/burger.svg"
           width="36"
@@ -50,26 +56,82 @@
           aria-hidden="true"
         />
       </button>
+      <side-navigation id="side-navigation" style="display: none">
+        <button
+          style="padding: 10px; justify-self: end"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-haspopup="true"
+          onclick="handleBurgerMenuClick()"
+        >
+          <img
+            src="resources/svg/burger.svg"
+            width="36"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+        <side-navigation-child
+          id="first"
+          title="Inland"
+          main-link="/inland"
+          sub-links='[
+              {"href":"/inland","text":"Startseite Inland"},
+              {"href":"/inland/innenpolitik","text":"Innenpolitik"},
+              {"href":"/inland/gesellschaft","text":"Gesellschaft"},
+              {"href":"/inland/regional","text":"Regional"},
+              {"href":"/inland/deutschlandtrend","text":"DeutschlandTrend"},
+              {"href":"/wahl","text":"Wahlen"},
+              {"href":"/inland/mittendrin","text":"Mitendrin"}
+            ]'
+        >
+        </side-navigation-child>
+        <side-navigation-child
+          id="second"
+          title="Inland"
+          main-link="/inland"
+          sub-links='[
+              {"href":"/inland","text":"Startseite Inland"},
+              {"href":"/inland/innenpolitik","text":"Innenpolitik"},
+              {"href":"/inland/gesellschaft","text":"Gesellschaft"},
+              {"href":"/inland/regional","text":"Regional"},
+              {"href":"/inland/deutschlandtrend","text":"DeutschlandTrend"},
+              {"href":"/wahl","text":"Wahlen"},
+              {"href":"/inland/mittendrin","text":"Mitendrin"}
+            ]'
+        >
+        </side-navigation-child>
+        <side-navigation-child
+          id="third"
+          title="Inland"
+          main-link="/inland"
+          sub-links='[
+              {"href":"/inland","text":"Startseite Inland"},
+              {"href":"/inland/innenpolitik","text":"Innenpolitik"},
+              {"href":"/inland/gesellschaft","text":"Gesellschaft"},
+              {"href":"/inland/regional","text":"Regional"},
+              {"href":"/inland/deutschlandtrend","text":"DeutschlandTrend"},
+              {"href":"/wahl","text":"Wahlen"},
+              {"href":"/inland/mittendrin","text":"Mitendrin"}
+            ]'
+        >
+        </side-navigation-child>
+      </side-navigation>
     </header>
 
     <main></main>
 
-    <template id="home-page-template">
-    </template>
+    <template id="home-page-template"> </template>
 
     <template id="contact-page-template">
-      <section class="wrapper">
-
-      </section>
+      <section class="wrapper bg-signature"></section>
     </template>
 
     <template id="contact-programs-page-template">
-      <form>
-
-      </form>
+      <form></form>
     </template>
 
-    <footer class="wrapper">
+    <footer class="wrapper bg-signature">
       <nav>
         <footer-accordion
           title="Service"
@@ -145,9 +207,7 @@
             <a href="/datenschutz">Datenschutzerklärung</a>
           </li>
           <li>
-            <a href="https://www.tagesschau.de/"
-              >Bildrechte</a
-            >
+            <a href="https://www.tagesschau.de/">Bildrechte</a>
           </li>
         </ul>
 
@@ -165,14 +225,31 @@
         </a>
       </nav>
 
-      <div style="margin-top: 30px; font-weight: 300; border-top: 1px solid var(--clr-hover)">
+      <div
+        style="
+          margin-top: 30px;
+          font-weight: 300;
+          border-top: 1px solid var(--clr-hover);
+        "
+      >
         <small>
           © 2025 Phil Pieper. This is a non-commercial, scientific recreation of
           the Tagesschau page for educational purposes only. All original rights
           to content and design belong to ARD/tagesschau.de.
         </small>
       </div>
-      </footer>
     </footer>
+
+    <script>
+      function handleBurgerMenuClick() {
+        const sideNavigation = document.getElementById("side-navigation");
+        const isVisible = sideNavigation.style.display != "none";
+        if (isVisible) {
+          sideNavigation.style.display = "none";
+        } else {
+          sideNavigation.style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>

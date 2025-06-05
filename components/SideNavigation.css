@@ -1,0 +1,28 @@
+.side-navigation-overlay {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); /* For Safari support */
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.side-navigation-wrapper {
+  background-color: var(--signature-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  max-width: 400px;
+  width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2em;
+  list-style-type: none;
+}

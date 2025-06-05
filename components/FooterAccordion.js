@@ -15,7 +15,6 @@ export default class FooterAccordion extends HTMLElement {
     const request = await fetch("/components/FooterAccordion.css");
     styles.textContent = await request.text();
 
-    // Build HTML content
     const container = document.createElement("div");
     container.innerHTML = `
       <details${
@@ -29,7 +28,7 @@ export default class FooterAccordion extends HTMLElement {
           ${links
             .map(
               (link) =>
-                `<li class="footer__navigation__list__item --service-item">
+                `<li>
                   <a href="${link.href}">${link.text}</a>
                 </li>`
             )
@@ -38,7 +37,6 @@ export default class FooterAccordion extends HTMLElement {
       </details>
     `;
 
-    // Clear shadow root and append style + content
     this.#root.innerHTML = "";
     this.#root.appendChild(styles);
     this.#root.appendChild(container);
