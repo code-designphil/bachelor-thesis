@@ -42,35 +42,16 @@
           />
         </span>
       </button>
-      <button
-        style="padding: 10px; justify-self: end"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-haspopup="true"
-        onclick="handleBurgerMenuClick()"
-      >
-        <img
-          src="resources/svg/burger.svg"
-          width="36"
-          alt=""
-          aria-hidden="true"
-        />
-      </button>
+      <burger-menu-button></burger-menu-button>
+      <div
+        style="
+          background: rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(2px);
+          -webkit-backdrop-filter: blur(2px); /* For Safari support */
+        "
+      ></div>
+      <div></div>
       <side-navigation id="side-navigation" style="display: none">
-        <button
-          style="padding: 10px; justify-self: end"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-haspopup="true"
-          onclick="handleBurgerMenuClick()"
-        >
-          <img
-            src="resources/svg/burger.svg"
-            width="36"
-            alt=""
-            aria-hidden="true"
-          />
-        </button>
         <side-navigation-child
           id="first"
           title="Inland"
@@ -88,31 +69,34 @@
         </side-navigation-child>
         <side-navigation-child
           id="second"
-          title="Inland"
-          main-link="/inland"
+          title="Ausland"
+          main-link="/ausland"
           sub-links='[
-              {"href":"/inland","text":"Startseite Inland"},
-              {"href":"/inland/innenpolitik","text":"Innenpolitik"},
-              {"href":"/inland/gesellschaft","text":"Gesellschaft"},
-              {"href":"/inland/regional","text":"Regional"},
-              {"href":"/inland/deutschlandtrend","text":"DeutschlandTrend"},
-              {"href":"/wahl","text":"Wahlen"},
-              {"href":"/inland/mittendrin","text":"Mitendrin"}
+              {"href":"/inland","text":"Startseite Ausland"},
+              {"href":"/inland/innenpolitik","text":"Europa"},
+              {"href":"/inland/gesellschaft","text":"Amerika"},
+              {"href":"/inland/regional","text":"Afrika"},
+              {"href":"/inland/deutschlandtrend","text":"Asien"},
+              {"href":"/wahl","text":"Ozeanien"},
+              {"href":"/inland/mittendrin","text":"Studios und Korrespondenten"}
             ]'
         >
         </side-navigation-child>
         <side-navigation-child
           id="third"
-          title="Inland"
-          main-link="/inland"
+          title="Wirtschaft"
+          main-link="/wirtschaft"
           sub-links='[
-              {"href":"/inland","text":"Startseite Inland"},
-              {"href":"/inland/innenpolitik","text":"Innenpolitik"},
-              {"href":"/inland/gesellschaft","text":"Gesellschaft"},
-              {"href":"/inland/regional","text":"Regional"},
-              {"href":"/inland/deutschlandtrend","text":"DeutschlandTrend"},
-              {"href":"/wahl","text":"Wahlen"},
-              {"href":"/inland/mittendrin","text":"Mitendrin"}
+              {"href":"/inland","text":"Startseite Wirtschaft"},
+              {"href":"/inland/innenpolitik","text":"Börsenkurse"},
+              {"href":"/inland/gesellschaft","text":"Verbraucher"},
+              {"href":"/inland/regional","text":"Unternehmen"},
+              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
+              {"href":"/wahl","text":"Finanzen"},
+              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
+              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
+              {"href":"/inland/mittendrin","text":"Energie"},
+              {"href":"/inland/mittendrin","text":"Digitales"}
             ]'
         >
         </side-navigation-child>
@@ -241,15 +225,15 @@
     </footer>
 
     <script>
-      function handleBurgerMenuClick() {
-        const sideNavigation = document.getElementById("side-navigation");
-        const isVisible = sideNavigation.style.display != "none";
-        if (isVisible) {
-          sideNavigation.style.display = "none";
-        } else {
-          sideNavigation.style.display = "block";
-        }
-      }
+      // function handleBurgerMenuClick() {
+      //   const sideNavigation = document.getElementById("side-navigation");
+      //   const isVisible = sideNavigation.style.display != "none";
+      //   if (isVisible) {
+      //     sideNavigation.style.display = "none";
+      //   } else {
+      //     sideNavigation.style.display = "block";
+      //   }
+      // }
     </script>
   </body>
 </html>

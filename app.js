@@ -7,6 +7,7 @@ import HomerPage from "./components/HomePage.js";
 import SideNavigation from "./components/SideNavigation.js";
 import SideNavigationChild from "./components/SideNavigationChild.js";
 import OpenSubLinkMenuButton from "./components/openSubLinkMenuButton.js";
+import BurgerMenu from "./components/BurgerMenu.js";
 
 window.app = {};
 app.router = Router;

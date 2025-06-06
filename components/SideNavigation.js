@@ -15,7 +15,7 @@ export default class SideNavigation extends HTMLElement {
     container.innerHTML = `
       <div class="side-navigation-overlay"></div>
       <div class="side-navigation-wrapper">
-        <ul style="padding: 0 40px 0 40px">
+        <ul>
           <slot></slot>
         </ul>
       </div>

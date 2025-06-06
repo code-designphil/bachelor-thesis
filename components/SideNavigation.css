@@ -1,13 +1,12 @@
 .side-navigation-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px); /* For Safari support */
-
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 .side-navigation-wrapper {
@@ -19,10 +18,33 @@
 
   max-width: 400px;
   width: 100%;
+
+  transform: translate(400px, 0px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.side-navigation-wrapper-moved {
+  transform: translate(0px, 0px);
 }
 
 ul {
   margin: 0;
-  padding-left: 1.2em;
+  padding: 0 50px 0 50px;
   list-style-type: none;
+}
+
+nav {
+  height: 100vh;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  max-width: 984px;
+  margin-inline: auto;
+  padding: 10px 60px;
+
+  /* to prevent padding from affecting the width */
+  box-sizing: content-box;
 }

@@ -7,12 +7,10 @@ export default class SideNavigationChild extends HTMLElement {
   }
 
   async connectedCallback() {
-    const hiddenContentID = crypto.randomUUID();
-
     const rootElementId = this.getAttribute("id");
     const title = this.getAttribute("title");
     const mainLink = this.getAttribute("main-link");
-    const subLinks = JSON.parse(this.getAttribute("sub-links") || "[]");
+    const subLinks = this.getAttribute("sub-links");
 
     const styles = document.createElement("style");
     const request = await fetch("/components/SideNavigationChild.css");
@@ -21,23 +19,13 @@ export default class SideNavigationChild extends HTMLElement {
     const container = document.createElement("li");
     container.innerHTML = `
       <div class="main-link-wrapper">
-          <a href="${mainLink}">${title}</a>
-          <open-sub-link-menu-button
-            title="${title}"
-            root-element-id="${rootElementId}"
-            hidden-content-id="${hiddenContentID}"
-          ></open-sub-link-menu-button>
-        </div>
-        <ul id="${hiddenContentID}" style="display: none">
-        ${subLinks
-          .map(
-            (link) =>
-              `<li>
-                <a href="${link.href}">${link.text}</a>
-              </li>`
-          )
-          .join("")}
-      </ul>
+        <a href="${mainLink}">${title}</a>
+        <open-sub-link-menu-button
+          title="${title}"
+          root-element-id="${rootElementId}"
+          sub-links='${subLinks}'
+        ></open-sub-link-menu-button>
+      </div>
     `;
 
     this.#root.innerHTML = "";

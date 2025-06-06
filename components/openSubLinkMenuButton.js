@@ -1,15 +1,37 @@
 export default class OpenSubLinkMenuButton extends HTMLElement {
   #root;
 
+  #isExpanded;
+
   constructor() {
     super();
     this.#root = this.attachShadow({ mode: "open" });
+    this.#isExpanded = false;
+  }
+
+  setExpanded(value) {
+    this.#isExpanded = true;
   }
 
   async connectedCallback() {
     const title = this.getAttribute("title");
-    const rootElementId = this.getAttribute("root-element-id");
-    const hiddenContentId = this.getAttribute("hidden-content-id");
+    const subLinks = JSON.parse(this.getAttribute("sub-links") || "[]");
+
+    if (!subLinks) return null;
+
+    const hiddenContent = `
+      ${subLinks
+        .map(
+          (link) =>
+            `<side-navigation-child
+                id="first"
+                title="${link.text}"
+                main-link="${link.href}"
+             >
+             </side-navigation-child>`
+        )
+        .join("")}
+    `;
 
     const styles = document.createElement("style");
     const request = await fetch("/components/OpenSubLinkMenuButton.css");
@@ -20,19 +42,28 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
     container.ariaExpanded = "false";
     container.ariaHasPopup = "true";
 
-    container.onclick = function handleOpenSubMenu(event) {
-      const rootElement = document.getElementById(rootElementId);
-      const shadow = rootElement.shadowRoot;
-      const hiddenContent = shadow.getElementById(hiddenContentId);
-      const button = event.target;
-      const isExpanded = button.ariaExpanded == "true";
+    container.onclick = (event) => {
+      const sideNavigationWrapper = document
+        .querySelector("side-navigation")
+        .shadowRoot.querySelector(".side-navigation-wrapper");
+      const button = event.currentTarget;
 
-      if (isExpanded) {
-        hiddenContent.style.display = "none";
-        button.ariaExpanded = "false";
+      if (this.#isExpanded) {
+        const contentBefore = document.createElement("ul");
+        contentBefore.innerHTML = `<slot></slot>`;
+        sideNavigationWrapper.replaceChildren(contentBefore);
       } else {
-        hiddenContent.style.display = "block";
+        sideNavigationWrapper.replaceChildren();
         button.ariaExpanded = "true";
+        const backButton = document.createElement("li");
+        const clone = this.cloneNode(true);
+        clone.setExpanded(true);
+        backButton.appendChild(clone);
+        const hiddenContentElement = document.createElement("ul");
+        hiddenContentElement.innerHTML = hiddenContent;
+        sideNavigationWrapper.appendChild(hiddenContentElement);
+        const ul = sideNavigationWrapper.querySelector("ul");
+        ul.insertBefore(backButton, ul.firstChild);
       }
     };
 
@@ -40,7 +71,9 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
         <img
             src="resources/svg/arrow-down.svg"
             width="36"
-            style="transform: rotate(270deg)"
+            style="transform: ${
+              this.#isExpanded ? "rotate(90deg)" : "rotate(270deg)"
+            }"
             alt=""
             aria-hidden="true"
         />
