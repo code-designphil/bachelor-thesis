@@ -1,9 +1,11 @@
 button {
-  display: flex;
-  align-items: center;
   background-color: unset;
   border: unset;
   color: white;
   padding: 10px;
-  justify-self: end;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--clr-hover-light);
 }

@@ -18,7 +18,7 @@ export default class FooterAccordion extends HTMLElement {
     const container = document.createElement("div");
     container.innerHTML = `
       <details${
-        isLast ? ' style="border-bottom: 1px solid var(--clr-hover)"' : ""
+        isLast ? ' style="border-bottom: 1px solid var(--clr-hover-dark)"' : ""
       }>
         <summary>
           <span>${title}</span>

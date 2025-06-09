@@ -6,6 +6,23 @@ export default class BurgerMenu extends HTMLElement {
     this.#root = this.attachShadow({ mode: "open" });
   }
 
+  closeSidenavigation(sideNavigation, navigationWrapper, button) {
+    sideNavigation.style.display = "none";
+    navigationWrapper.classList.toggle("side-navigation-wrapper-moved");
+    button.ariaExpanded = "false";
+  }
+
+  getButtonInnerHtml(isExpanded) {
+    return `
+        <img
+            src="resources/svg/${!isExpanded ? "cross" : "burger"}.svg"
+            width="${!isExpanded ? "30" : "36"}"
+            alt=""
+            aria-hidden="true"
+        />
+      `;
+  }
+
   async connectedCallback() {
     const styles = document.createElement("style");
     const request = await fetch("/components/BurgerMenu.css");
@@ -16,7 +33,7 @@ export default class BurgerMenu extends HTMLElement {
     button.ariaExpanded = "false";
     button.ariaHasPopup = "true";
 
-    button.onclick = function handleBurgerMenuClick(event) {
+    button.onclick = (event) => {
       const button = event.currentTarget;
       const sideNavigation = document.getElementById("side-navigation");
       const navigationWrapper = sideNavigation.shadowRoot.querySelector(
@@ -24,10 +41,21 @@ export default class BurgerMenu extends HTMLElement {
       );
       const isExpanded = button.ariaExpanded == "true";
 
+      const BurgerMenu = this;
+      document.addEventListener("keydown", function handleESC(e) {
+        if (e.key === "Escape" && button.ariaExpanded == "true") {
+          button.innerHTML = BurgerMenu.getButtonInnerHtml(true);
+          BurgerMenu.closeSidenavigation(
+            sideNavigation,
+            navigationWrapper,
+            button
+          );
+          button.focus();
+        }
+      });
+
       if (isExpanded) {
-        sideNavigation.style.display = "none";
-        navigationWrapper.classList.toggle("side-navigation-wrapper-moved");
-        button.ariaExpanded = "false";
+        this.closeSidenavigation(sideNavigation, navigationWrapper, button);
       } else {
         sideNavigation.style.display = "block";
         setTimeout(
@@ -38,14 +66,7 @@ export default class BurgerMenu extends HTMLElement {
         button.ariaExpanded = "true";
       }
 
-      button.innerHTML = `
-        <img
-            src="resources/svg/${!isExpanded ? "cross" : "burger"}.svg"
-            width="${!isExpanded ? "30" : "36"}"
-            alt=""
-            aria-hidden="true"
-        />
-      `;
+      button.innerHTML = this.getButtonInnerHtml(isExpanded);
     };
 
     button.innerHTML = `

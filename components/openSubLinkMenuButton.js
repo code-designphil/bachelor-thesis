@@ -9,8 +9,12 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
     this.#isExpanded = false;
   }
 
-  setExpanded(value) {
-    this.#isExpanded = true;
+  setExpanded() {
+    this.#isExpanded = !this.#isExpanded;
+  }
+
+  focusBackButton() {
+    setTimeout(() => this.shadowRoot.querySelector("button").focus(), 50);
   }
 
   async connectedCallback() {
@@ -24,7 +28,6 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
         .map(
           (link) =>
             `<side-navigation-child
-                id="first"
                 title="${link.text}"
                 main-link="${link.href}"
              >
@@ -38,9 +41,15 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
     styles.textContent = await request.text();
 
     const container = document.createElement("button");
-    container.ariaLabel = `Open ${title} menu`;
+    container.ariaLabel = `${this.#isExpanded ? "Close" : "Open"}${title} menu`;
     container.ariaExpanded = "false";
     container.ariaHasPopup = "true";
+
+    function closeSubMenu(sideNavigationWrapper) {
+      const contentBefore = document.createElement("ul");
+      contentBefore.innerHTML = `<slot></slot>`;
+      sideNavigationWrapper.replaceChildren(contentBefore);
+    }
 
     container.onclick = (event) => {
       const sideNavigationWrapper = document
@@ -49,16 +58,23 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
       const button = event.currentTarget;
 
       if (this.#isExpanded) {
-        const contentBefore = document.createElement("ul");
-        contentBefore.innerHTML = `<slot></slot>`;
-        sideNavigationWrapper.replaceChildren(contentBefore);
+        closeSubMenu(sideNavigationWrapper);
       } else {
+        const backButton = document.createElement("li");
+        backButton.style =
+          "display: flex; justify-content: space-between; align-items: stretch; background-color: var(--clr-hover-light);";
+        const backLink = document.createElement("a");
+        backLink.innerHTML = "Inland";
+        backLink.style =
+          "flex-grow: 1; display: flex; align-items: center; cursor: pointer";
+        backLink.onclick = () => closeSubMenu(sideNavigationWrapper);
+        const clone = this.cloneNode(true);
+        clone.setExpanded();
+        clone.focusBackButton();
+        backButton.appendChild(clone);
+        backButton.appendChild(backLink);
         sideNavigationWrapper.replaceChildren();
         button.ariaExpanded = "true";
-        const backButton = document.createElement("li");
-        const clone = this.cloneNode(true);
-        clone.setExpanded(true);
-        backButton.appendChild(clone);
         const hiddenContentElement = document.createElement("ul");
         hiddenContentElement.innerHTML = hiddenContent;
         sideNavigationWrapper.appendChild(hiddenContentElement);

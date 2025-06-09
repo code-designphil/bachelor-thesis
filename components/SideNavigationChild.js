@@ -11,12 +11,14 @@ export default class SideNavigationChild extends HTMLElement {
     const title = this.getAttribute("title");
     const mainLink = this.getAttribute("main-link");
     const subLinks = this.getAttribute("sub-links");
+    const first = this.getAttribute("id") == "first";
 
     const styles = document.createElement("style");
     const request = await fetch("/components/SideNavigationChild.css");
     styles.textContent = await request.text();
 
     const container = document.createElement("li");
+    container.classList.add(first ? "first" : null);
     container.innerHTML = `
       <div class="main-link-wrapper">
         <a href="${mainLink}">${title}</a>

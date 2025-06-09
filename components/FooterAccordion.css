@@ -1,5 +1,5 @@
 details {
-  border-top: 1px solid var(--clr-hover);
+  border-top: 1px solid var(--clr-hover-dark);
 }
 
 summary {
@@ -13,7 +13,7 @@ summary {
 }
 
 summary:hover {
-  background-color: var(--clr-hover);
+  background-color: var(--clr-hover-dark);
 }
 
 a {

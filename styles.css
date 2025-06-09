@@ -145,6 +145,8 @@
 @layer utilities {
   :root {
     --signature-color: #1c2841;
+    --clr-hover-dark: #545c74;
+    --clr-hover-light: #015a99;
   }
 
   h3 {
