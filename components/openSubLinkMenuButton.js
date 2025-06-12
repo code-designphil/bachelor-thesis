@@ -17,11 +17,27 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
     setTimeout(() => this.shadowRoot.querySelector("button").focus(), 50);
   }
 
+  closeSubMenu(sideNavigationWrapper) {
+    const contentBefore = document.createElement("ul");
+    contentBefore.innerHTML = `<slot></slot>`;
+    sideNavigationWrapper.replaceChildren(contentBefore);
+  }
+
+  createBackLink(title, sideNavigationWrapper) {
+    const backLink = document.createElement("a");
+    backLink.innerHTML = title;
+    backLink.style =
+      "flex-grow: 1; display: flex; align-items: center; cursor: pointer";
+    backLink.onclick = () => this.closeSubMenu(sideNavigationWrapper);
+    return backLink;
+  }
+
   async connectedCallback() {
     const title = this.getAttribute("title");
     const subLinks = JSON.parse(this.getAttribute("sub-links") || "[]");
+    const isFulllWidth = this.getAttribute("is-full-width") == "false";
 
-    if (!subLinks) return null;
+    if (!subLinks.length && title != "Einstellungen") return null;
 
     const hiddenContent = `
       ${subLinks
@@ -29,7 +45,7 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
           (link) =>
             `<side-navigation-child
                 title="${link.text}"
-                main-link="${link.href}"
+                main-link="${link.href ?? `/${link.text.toLowerCase()}`}"
              >
              </side-navigation-child>`
         )
@@ -41,15 +57,11 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
     styles.textContent = await request.text();
 
     const container = document.createElement("button");
-    container.ariaLabel = `${this.#isExpanded ? "Close" : "Open"}${title} menu`;
+    container.ariaLabel = `${
+      this.#isExpanded ? "Close " : "Open "
+    }${title} menu`;
     container.ariaExpanded = "false";
     container.ariaHasPopup = "true";
-
-    function closeSubMenu(sideNavigationWrapper) {
-      const contentBefore = document.createElement("ul");
-      contentBefore.innerHTML = `<slot></slot>`;
-      sideNavigationWrapper.replaceChildren(contentBefore);
-    }
 
     container.onclick = (event) => {
       const sideNavigationWrapper = document
@@ -58,20 +70,16 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
       const button = event.currentTarget;
 
       if (this.#isExpanded) {
-        closeSubMenu(sideNavigationWrapper);
+        this.closeSubMenu(sideNavigationWrapper);
       } else {
         const backButton = document.createElement("li");
         backButton.style =
           "display: flex; justify-content: space-between; align-items: stretch; background-color: var(--clr-hover-light);";
-        const backLink = document.createElement("a");
-        backLink.innerHTML = "Inland";
-        backLink.style =
-          "flex-grow: 1; display: flex; align-items: center; cursor: pointer";
-        backLink.onclick = () => closeSubMenu(sideNavigationWrapper);
         const clone = this.cloneNode(true);
         clone.setExpanded();
         clone.focusBackButton();
         backButton.appendChild(clone);
+        const backLink = this.createBackLink(title, sideNavigationWrapper);
         backButton.appendChild(backLink);
         sideNavigationWrapper.replaceChildren();
         button.ariaExpanded = "true";
@@ -83,17 +91,28 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
       }
     };
 
-    container.innerHTML = `
-        <img
-            src="resources/svg/arrow-down.svg"
-            width="36"
-            style="transform: ${
-              this.#isExpanded ? "rotate(90deg)" : "rotate(270deg)"
-            }"
-            alt=""
-            aria-hidden="true"
-        />
-    `;
+    const icon = `<img
+                      src="resources/svg/arrow-down.svg"
+                      width="36"
+                      style="transform: ${
+                        this.#isExpanded ? "rotate(90deg)" : "rotate(270deg)"
+                      }"
+                      alt=""
+                      aria-hidden="true"
+                  />`;
+
+    if (isFulllWidth && !this.#isExpanded) {
+      container.classList.add("full-width");
+      this.style = "width: 100%";
+    } else {
+      container.classList.remove("full-width");
+      this.style = "";
+    }
+
+    container.innerHTML =
+      isFulllWidth && !this.#isExpanded
+        ? `<p class="main-button">${title}</p>${icon}`
+        : icon;
 
     this.#root.innerHTML = "";
     this.#root.appendChild(styles);

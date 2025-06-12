@@ -10,7 +10,7 @@ export default class SideNavigationChild extends HTMLElement {
     const rootElementId = this.getAttribute("id");
     const title = this.getAttribute("title");
     const mainLink = this.getAttribute("main-link");
-    const subLinks = this.getAttribute("sub-links");
+    const subLinks = this.getAttribute("sub-links") || "";
     const first = this.getAttribute("id") == "first";
 
     const styles = document.createElement("style");
@@ -21,11 +21,12 @@ export default class SideNavigationChild extends HTMLElement {
     container.classList.add(first ? "first" : null);
     container.innerHTML = `
       <div class="main-link-wrapper">
-        <a href="${mainLink}">${title}</a>
+        ${mainLink ? `<a href="${mainLink}">${title}</a>` : ""}
         <open-sub-link-menu-button
           title="${title}"
           root-element-id="${rootElementId}"
           sub-links='${subLinks}'
+          is-full-width="${Boolean(mainLink)}"
         ></open-sub-link-menu-button>
       </div>
     `;

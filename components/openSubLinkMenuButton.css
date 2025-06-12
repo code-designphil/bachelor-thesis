@@ -3,9 +3,26 @@ button {
   border: unset;
   color: white;
   padding: 10px;
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1;
 }
 
 button:hover {
   cursor: pointer;
   background-color: var(--clr-hover-light);
+}
+
+.main-button {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  min-height: 40px;
+}
+
+.full-width {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
