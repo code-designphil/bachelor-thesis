@@ -31,19 +31,21 @@ export default class ContactPage extends HTMLElement {
     this.render();
   }
 
+  disconnectedCallback() {
+    const breadcrumbs = document.getElementById("sub-navigation");
+    breadcrumbs.removeChild(breadcrumbs.lastChild);
+  }
+
   render() {
     const section = this.root.querySelector("section.wrapper");
-    section.innerHTML = `
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" />
-        <br />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" />
-        <br />
-        <button type="submit">Submit</button>
-      </form>
-    `;
+    section.innerHTML = `<slot></slot>`;
+
+    const breadcrumbs = document.getElementById("sub-navigation");
+    const breadcrumb = document.createElement("a");
+    breadcrumb.href = "/kontakt";
+    breadcrumb.classList.add("bredcrumb-tag");
+    breadcrumb.innerHTML = "Kontakt";
+    breadcrumbs.appendChild(breadcrumb);
   }
 }
 

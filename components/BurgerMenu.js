@@ -6,8 +6,14 @@ export default class BurgerMenu extends HTMLElement {
     this.#root = this.attachShadow({ mode: "open" });
   }
 
-  closeSidenavigation(sideNavigation, navigationWrapper, button) {
+  closeSidenavigation(
+    sideNavigation,
+    sideNavigationPlaceholder,
+    navigationWrapper,
+    button
+  ) {
     sideNavigation.style.display = "none";
+    sideNavigationPlaceholder.style.display = "block";
     navigationWrapper.classList.toggle("side-navigation-wrapper-moved");
     button.ariaExpanded = "false";
   }
@@ -36,6 +42,9 @@ export default class BurgerMenu extends HTMLElement {
     button.onclick = (event) => {
       const button = event.currentTarget;
       const sideNavigation = document.getElementById("side-navigation");
+      const sideNavigationPlaceholder = document.getElementById(
+        "side-navigation-placeholder"
+      );
       const navigationWrapper = sideNavigation.shadowRoot.querySelector(
         ".side-navigation-wrapper"
       );
@@ -47,6 +56,7 @@ export default class BurgerMenu extends HTMLElement {
           button.innerHTML = BurgerMenu.getButtonInnerHtml(true);
           BurgerMenu.closeSidenavigation(
             sideNavigation,
+            sideNavigationPlaceholder,
             navigationWrapper,
             button
           );
@@ -55,9 +65,15 @@ export default class BurgerMenu extends HTMLElement {
       });
 
       if (isExpanded) {
-        this.closeSidenavigation(sideNavigation, navigationWrapper, button);
+        this.closeSidenavigation(
+          sideNavigation,
+          sideNavigationPlaceholder,
+          navigationWrapper,
+          button
+        );
       } else {
         sideNavigation.style.display = "block";
+        sideNavigationPlaceholder.style.display = "none";
         setTimeout(
           () =>
             navigationWrapper.classList.toggle("side-navigation-wrapper-moved"),

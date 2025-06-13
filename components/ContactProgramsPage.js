@@ -17,7 +17,20 @@ export default class ContactProgramsPage extends HTMLElement {
     loadCSS();
   }
 
-  connectedCallback() {}
+  connectedCallback() {
+    // const section = this.root.querySelector("section.wrapper");
+    // section.innerHTML = `
+    //   <form>
+    //     <label for="name">Name:</label>
+    //     <input type="text" id="name" name="name" />
+    //     <br />
+    //     <label for="email">Email:</label>
+    //     <input type="email" id="email" name="email" />
+    //     <br />
+    //     <button type="submit">Submit</button>
+    //   </form>
+    // `;
+  }
 }
 
 customElements.define("contact-programs-page", ContactProgramsPage);

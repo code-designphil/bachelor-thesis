@@ -18,7 +18,7 @@
   <body>
     <header
       class="wrapper bg-signature"
-      style="display: grid; grid-template-columns: 1fr 1fr 1fr"
+      style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px"
     >
       <a href="/" style="display: flex; align-items: center">
         <img
@@ -43,13 +43,7 @@
         </span>
       </button>
       <burger-menu-button style="justify-self: end"></burger-menu-button>
-      <div
-        style="
-          background: rgba(255, 255, 255, 0.3);
-          backdrop-filter: blur(2px);
-          -webkit-backdrop-filter: blur(2px); /* For Safari support */
-        "
-      ></div>
+      <div></div>
       <div></div>
       <side-navigation id="side-navigation" style="display: none; z-index: 10">
         <side-navigation-child
@@ -209,14 +203,148 @@
         </side-navigation-child>
         <side-navigation-child title="Einstellungen"></side-navigation-child>
       </side-navigation>
+      <div id="side-navigation-placeholder"></div>
+      <nav aria-label="Subnavigation" id="sub-navigation">
+        <a class="bredcrumb-tag" href="/">Startseite</a>
+      </nav>
     </header>
 
     <main></main>
 
-    <template id="home-page-template"> </template>
+    <template id="home-page-template"></template>
 
     <template id="contact-page-template">
-      <section class="wrapper bg-signature"></section>
+      <section class="wrapper bg-signature">
+        <article>
+          <picture>
+            <source
+              type="image/webp"
+              media="(max-width: 440px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLkm68/16x9-640/tagesschau-logo-100.webp
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 767px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLk4K0/16x9-768/tagesschau-logo-100.webp
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 900px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLp4nc/20x9-960/tagesschau-logo-100.webp
+              "
+            />
+            <source
+              type="image/webp"
+              media="(min-width: 901px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLpihI/20x9-1280/tagesschau-logo-100.webp
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(max-width: 440px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLkm68/16x9-640/tagesschau-logo-100.jpg
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(max-width: 767px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLk4K0/16x9-768/tagesschau-logo-100.jpg
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(max-width: 900px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLp4nc/20x9-960/tagesschau-logo-100.jpg
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(min-width: 901px)"
+              srcset="
+                https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLpihI/20x9-1280/tagesschau-logo-100.jpg
+              "
+            />
+            <img
+              loading="lazy"
+              decoding="async"
+              src="https://images.tagesschau.de/image/89045d82-5cd5-46ad-8f91-73911add30ee/AAABlpITK5s/AAABkZLpihI/20x9-1280/tagesschau-logo-100.jpg"
+              alt="tagesschau"
+              title="tagesschau | ARD-aktuell"
+            />
+          </picture>
+          <div style="width: 66%; margin: 1rem auto">
+            <h1>
+              <span class="rooftitle">Kontakt</span>
+              <span>So erreichen Sie uns</span>
+            </h1>
+            <p class="metatextline">Stand: 25.04.2024 12:43 Uhr</p>
+            <p>
+              <strong style="font-size: 20px; line-height: 1"
+                >tagesschau.de ist eine ARD-Gemeinschaftseinrichtung mit Sitz
+                beim Norddeutschen Rundfunk in Hamburg</strong
+              >
+            </p>
+            <br />
+            <p>
+              NDR/tagesschau.de<br />
+              Hugh-Greene-Weg 1<br />
+              22529 Hamburg
+            </p>
+            <br />
+            <p>
+              Telefon: 040 / 4156-0<br />
+              Fax: 040 / 4156-7419
+            </p>
+            <br />
+            <p>
+              E-Mail:
+              <a href="#Kontaktformulare"
+                >Anfrage über themenorientierte Kontaktformulare</a
+              >
+            </p>
+            <br />
+            <h2
+              id="Fuer-Inhalte-der-Sendungen-tagesschau-und-tagesthemen-ist-ARD-aktuell-verantwortlich"
+            >
+              Für Inhalte der Sendungen tagesschau und tagesthemen ist
+              ARD-aktuell verantwortlich
+            </h2>
+            <br />
+            <p>
+              NDR / ARD-aktuell<br />
+              Hugh-Greene-Weg 1<br />
+              2529 Hamburg
+            </p>
+            <br />
+            <p>
+              <em>Chefredaktion</em>
+            </p>
+            <br />
+            <p>
+              Marcus Bornheim<br />
+              1. Chefredakteur<br /><br />
+              Helge Fuhst<br />
+              2. Chefredakteur<br /><br />
+              Juliane Leopold<br />
+              Chefredakteurin Digitales<br /><br />
+              Telefon: 040 / 4156-0
+            </p>
+            <br />
+            <h2 id="Kontaktformulare">
+              <span>Kontaktformulare</span>
+            </h2>
+          </div>
+        </article>
+      </section>
     </template>
 
     <template id="contact-programs-page-template">
