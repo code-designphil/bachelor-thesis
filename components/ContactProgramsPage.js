@@ -11,25 +11,48 @@ export default class ContactProgramsPage extends HTMLElement {
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const request = await fetch("/components/ContactProgramsPage.css");
-      styles.textContent = await request.text();
+      const contactPageStyles = await fetch(
+        "/components/ContactProgramsPage.css"
+      );
+      const globalStyles = await fetch("/styles.css");
+      styles.textContent = await contactPageStyles.text();
+      styles.textContent = styles.textContent.concat(await globalStyles.text());
     }
     loadCSS();
   }
 
   connectedCallback() {
-    // const section = this.root.querySelector("section.wrapper");
-    // section.innerHTML = `
-    //   <form>
-    //     <label for="name">Name:</label>
-    //     <input type="text" id="name" name="name" />
-    //     <br />
-    //     <label for="email">Email:</label>
-    //     <input type="email" id="email" name="email" />
-    //     <br />
-    //     <button type="submit">Submit</button>
-    //   </form>
-    // `;
+    const template = document.getElementById("contact-programs-page-template");
+    const content = template.content.cloneNode(true);
+    this.root.appendChild(content);
+
+    window.addEventListener("appmenuchange", () => {
+      this.render();
+    });
+
+    this.render();
+  }
+
+  disconnectedCallback() {
+    const breadcrumbs = document.getElementById("sub-navigation");
+    for (let i = 0; i < 2; i++) {
+      breadcrumbs.removeChild(breadcrumbs.lastChild);
+    }
+  }
+  render() {
+    const section = this.root.querySelector("section.wrapper");
+    section.innerHTML = `<slot></slot>`;
+
+    const breadcrumbs = document.getElementById("sub-navigation");
+    const firstBreadcrumb = document.createElement("a");
+    firstBreadcrumb.href = "/kontakt";
+    firstBreadcrumb.classList.add("bredcrumb-tag");
+    firstBreadcrumb.innerHTML = "Kontakt";
+    breadcrumbs.appendChild(firstBreadcrumb);
+    const secondBreadcrumb = firstBreadcrumb.cloneNode(true);
+    secondBreadcrumb.removeAttribute("href");
+    secondBreadcrumb.innerHTML = "Kontakt: Sendungen";
+    breadcrumbs.appendChild(secondBreadcrumb);
   }
 }
 

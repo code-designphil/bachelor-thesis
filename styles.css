@@ -121,6 +121,11 @@
     letter-spacing: 0.75px;
   }
 
+  footer {
+    margin-top: 15px;
+    padding-top: 40px !important;
+  }
+
   header button {
     display: flex;
     align-items: center;
@@ -142,7 +147,7 @@
     display: inline-block;
   }
 
-  .bredcrumb-tag:hover {
+  .bredcrumb-tag[href]:hover {
     background-color: var(--clr-hover-dark);
   }
 
@@ -159,6 +164,14 @@
     color: var(--clr-grey-1);
     font-style: italic;
   }
+
+  .metatextline.small {
+    font-size: 1rem;
+  }
+
+  p.small {
+    font-size: 1rem;
+  }
 }
 
 @layer layout {
@@ -170,6 +183,24 @@
     /* to prevent padding from affecting the width */
     box-sizing: content-box;
   }
+
+  .contact-forms-teaser-holder {
+    max-width: 768px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .divider {
+    width: 66%;
+    margin: 2rem auto 1rem auto;
+    border-bottom: 0.1rem solid var(--clr-grey-2);
+  }
+
+  .divider.flip {
+    margin: 1rem auto 2rem auto;
+  }
 }
 
 /* Utility */
@@ -180,6 +211,8 @@
     --clr-hover-light: #015a99;
     --clr-smooth-white: #e1e3e6;
     --clr-grey-1: #a4a9b3;
+    --clr-grey-2: #555e70;
+    --clr-signature-light: #333d54;
   }
 
   h1 {
@@ -192,8 +225,13 @@
     font-weight: 400;
   }
 
+  .h2 {
+    font-size: 1.5rem;
+  }
+
   h3 {
-    font-size: 2rem;
+    font-size: 1.4rem;
+    font-weight: 400;
   }
 
   strong {
@@ -206,5 +244,13 @@
 
   .bg-signature {
     background-color: var(--signature-color);
+  }
+
+  button[type="submit"] {
+    background-color: var(--clr-hover-light);
+    padding: 0 50px;
+    color: white;
+    border: unset;
+    border-radius: 4px;
   }
 }

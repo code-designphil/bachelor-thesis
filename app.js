@@ -8,6 +8,7 @@ import SideNavigation from "./components/SideNavigation.js";
 import SideNavigationChild from "./components/SideNavigationChild.js";
 import OpenSubLinkMenuButton from "./components/openSubLinkMenuButton.js";
 import BurgerMenu from "./components/BurgerMenu.js";
+import ContactFormTeaser from "./components/ContactFormTeaser.js";
 
 window.app = {};
 app.router = Router;

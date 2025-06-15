@@ -1,0 +1,106 @@
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+legend {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  color: white;
+  background-color: var(--signature-color);
+  padding: 1.8rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1rem;
+  align-items: center;
+  display: flex;
+  border: 1px solid white;
+}
+
+select {
+  max-width: 400px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("../resources/svg/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 32px 32px;
+  padding-right: 20px;
+}
+
+textarea {
+  resize: none;
+}
+
+label {
+  font-size: 1rem;
+  opacity: 0.75;
+  pointer-events: none;
+  transform-origin: 0 0;
+  height: 100%;
+  transition: font-size 0.1s ease-in-out, top 0.1s ease-in-out;
+  position: absolute;
+  top: 22px;
+  left: 10px;
+}
+
+label.static {
+  font-size: 0.8rem;
+  top: 8px;
+}
+
+label.data-security {
+  position: relative;
+  top: unset;
+  left: unset;
+  pointer-events: unset;
+  cursor: pointer;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: transparent;
+}
+
+input:focus + label:not(.data-security),
+textarea:focus + label {
+  font-size: 0.8rem;
+  top: 8px;
+}
+
+.form-wrapper {
+  padding: 20px 24px;
+  margin-top: 30px;
+  background-color: var(--clr-signature-light);
+}
+
+.form-element-wrapper.first {
+  margin-top: 5px;
+}
+
+.form-element-wrapper {
+  position: relative;
+  margin: 25px 0;
+}
+
+input#datenschutz {
+  width: 16px;
+  padding: 0;
+  margin: 1px 0;
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.data-security-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: start;
+  padding: 0 8px;
+}
