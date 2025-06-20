@@ -27,7 +27,9 @@ export default class WeatherGermanyPage extends HTMLElement {
 
   disconnectedCallback() {
     const breadcrumbs = document.getElementById("sub-navigation");
-    breadcrumbs.removeChild(breadcrumbs.lastChild);
+    for (let i = 0; i < 2; i++) {
+      breadcrumbs.removeChild(breadcrumbs.lastChild);
+    }
   }
 
   render() {
