@@ -35,6 +35,9 @@ const Router = {
       case "/wetter":
         pageElement = document.createElement("weather-page");
         break;
+      case "/wettervorhersage-deutschland":
+        pageElement = document.createElement("weather-germany-page");
+        break;
       default:
         break;
     }

@@ -126,6 +126,10 @@
     padding-top: 40px !important;
   }
 
+  article {
+    font-size: 20px;
+  }
+
   header button {
     display: flex;
     align-items: center;

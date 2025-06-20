@@ -32,9 +32,9 @@ export default class WeatherPage extends HTMLElement {
     const breadcrumbs = document.getElementById("sub-navigation");
     const breadcrumbWrapper = document.createElement("li");
     const breadcrumb = document.createElement("a");
-    breadcrumb.href = "/kontakt";
+    breadcrumb.href = "/wetter";
     breadcrumb.classList.add("bredcrumb-tag");
-    breadcrumb.innerHTML = "Kontakt";
+    breadcrumb.innerHTML = "Wetter";
     breadcrumbWrapper.append(breadcrumb);
     breadcrumbs.appendChild(breadcrumbWrapper);
   }

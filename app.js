@@ -10,6 +10,7 @@ import OpenSubLinkMenuButton from "./components/openSubLinkMenuButton.js";
 import BurgerMenu from "./components/BurgerMenu.js";
 import ContactFormTeaser from "./components/ContactFormTeaser.js";
 import WeatherPage from "./components/WeatherPage.js";
+import WeatherGermanyPage from "./components/WeatherGermanyPage.js";
 
 window.app = {};
 app.router = Router;
