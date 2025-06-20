@@ -41,11 +41,13 @@ export default class ContactPage extends HTMLElement {
     section.innerHTML = `<slot></slot>`;
 
     const breadcrumbs = document.getElementById("sub-navigation");
+    const breadcrumbWrapper = document.createElement("li");
     const breadcrumb = document.createElement("a");
     breadcrumb.href = "/kontakt";
     breadcrumb.classList.add("bredcrumb-tag");
     breadcrumb.innerHTML = "Kontakt";
-    breadcrumbs.appendChild(breadcrumb);
+    breadcrumbWrapper.append(breadcrumb);
+    breadcrumbs.appendChild(breadcrumbWrapper);
   }
 }
 

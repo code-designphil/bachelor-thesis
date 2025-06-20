@@ -139,16 +139,30 @@
   }
 
   #sub-navigation {
-    grid-column: span 2;
+    display: flex;
+    margin: 0;
+  }
+
+  #sub-navigation > li {
+    list-style: none;
   }
 
   .bredcrumb-tag {
-    padding: 6px 12px;
+    padding: 12px 6px 12px 8px;
     display: inline-block;
   }
 
   .bredcrumb-tag[href]:hover {
     background-color: var(--clr-hover-dark);
+  }
+
+  #sub-navigation > li:not(:first-child)::before {
+    display: inline-flex;
+    content: "";
+    transform: translateY(-85%) translateX(20%);
+    border-top: 0.2em solid transparent;
+    border-bottom: 0.2em solid transparent;
+    border-left: 0.3em solid var(--clr-grey-1);
   }
 
   .rooftitle {

@@ -44,15 +44,19 @@ export default class ContactProgramsPage extends HTMLElement {
     section.innerHTML = `<slot></slot>`;
 
     const breadcrumbs = document.getElementById("sub-navigation");
+    const firstBreadcrumbWrapper = document.createElement("li");
     const firstBreadcrumb = document.createElement("a");
     firstBreadcrumb.href = "/kontakt";
     firstBreadcrumb.classList.add("bredcrumb-tag");
     firstBreadcrumb.innerHTML = "Kontakt";
-    breadcrumbs.appendChild(firstBreadcrumb);
+    firstBreadcrumbWrapper.appendChild(firstBreadcrumb);
+    breadcrumbs.appendChild(firstBreadcrumbWrapper);
+    const secondBreadcrumbWrapper = document.createElement("li");
     const secondBreadcrumb = firstBreadcrumb.cloneNode(true);
     secondBreadcrumb.removeAttribute("href");
     secondBreadcrumb.innerHTML = "Kontakt: Sendungen";
-    breadcrumbs.appendChild(secondBreadcrumb);
+    secondBreadcrumbWrapper.appendChild(secondBreadcrumb);
+    breadcrumbs.appendChild(secondBreadcrumbWrapper);
 
     const formElement = this.root.querySelector("form");
     console.log(formElement);
