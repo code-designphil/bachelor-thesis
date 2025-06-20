@@ -9,6 +9,7 @@ import SideNavigationChild from "./components/SideNavigationChild.js";
 import OpenSubLinkMenuButton from "./components/openSubLinkMenuButton.js";
 import BurgerMenu from "./components/BurgerMenu.js";
 import ContactFormTeaser from "./components/ContactFormTeaser.js";
+import WeatherPage from "./components/WeatherPage.js";
 
 window.app = {};
 app.router = Router;

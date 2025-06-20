@@ -22,14 +22,6 @@ export default class ContactProgramsPage extends HTMLElement {
   }
 
   connectedCallback() {
-    const template = document.getElementById("contact-programs-page-template");
-    const content = template.content.cloneNode(true);
-    this.root.appendChild(content);
-
-    window.addEventListener("appmenuchange", () => {
-      this.render();
-    });
-
     this.render();
   }
 
@@ -40,9 +32,6 @@ export default class ContactProgramsPage extends HTMLElement {
     }
   }
   render() {
-    const section = this.root.querySelector("section.wrapper");
-    section.innerHTML = `<slot></slot>`;
-
     const breadcrumbs = document.getElementById("sub-navigation");
     const firstBreadcrumbWrapper = document.createElement("li");
     const firstBreadcrumb = document.createElement("a");

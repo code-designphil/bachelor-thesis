@@ -1,19 +1,19 @@
-export default class ContactPage extends HTMLElement {
+export default class WeatherPage extends HTMLElement {
   constructor() {
     super();
 
     this.root = this.attachShadow({ mode: "open" });
 
-    const template = document.getElementById("contact-page-template");
+    const template = document.getElementById("weather-page-template");
     const content = template.content.cloneNode(true);
     const styles = document.createElement("style");
     this.root.appendChild(content);
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const contactPageStyles = await fetch("/components/ContactPage.css");
+      const weatherPageStyles = await fetch("/components/WeatherPage.css");
       const globalStyles = await fetch("/styles.css");
-      styles.textContent = await contactPageStyles.text();
+      styles.textContent = await weatherPageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
     }
     loadCSS();
@@ -40,4 +40,4 @@ export default class ContactPage extends HTMLElement {
   }
 }
 
-customElements.define("contact-page", ContactPage);
+customElements.define("weather-page", WeatherPage);

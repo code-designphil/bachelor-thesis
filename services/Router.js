@@ -32,6 +32,9 @@ const Router = {
       case "/kontakt-sendungen":
         pageElement = document.createElement("contact-programs-page");
         break;
+      case "/wetter":
+        pageElement = document.createElement("weather-page");
+        break;
       default:
         break;
     }
