@@ -53,6 +53,14 @@ export default class ContactProgramsPage extends HTMLElement {
     secondBreadcrumb.removeAttribute("href");
     secondBreadcrumb.innerHTML = "Kontakt: Sendungen";
     breadcrumbs.appendChild(secondBreadcrumb);
+
+    const formElement = this.root.querySelector("form");
+    console.log(formElement);
+    formElement.addEventListener("submit", (event) => {
+      event.preventDefault();
+      formElement.outerHTML =
+        "Liebe Zuschauerin, lieber Zuschauer,</br>liebe Userin, lieber User,</br></br>vielen Dank für Ihre Nachricht an tagesschau, tagesthemen, tagesschau24 oder tagesschau.de. Wir freuen uns sehr über Ihr Interesse an unseren Nachrichtenangeboten und sind dankbar für Ihr Feedback, Ihre Hinweise, Anregungen, Meinungen oder Themenvorschläge.";
+    });
   }
 }
 
