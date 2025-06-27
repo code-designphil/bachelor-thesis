@@ -299,4 +299,13 @@
     border: unset;
     border-radius: 4px;
   }
+
+  .mt-m {
+    margin-top: 1rem;
+  }
+
+  .py-m {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }

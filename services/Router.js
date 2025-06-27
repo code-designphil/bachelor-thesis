@@ -38,6 +38,9 @@ const Router = {
       case "/wettervorhersage-deutschland":
         pageElement = document.createElement("weather-germany-page");
         break;
+      case "/wirtschaft":
+        pageElement = document.createElement("economy-page");
+        break;
       default:
         break;
     }

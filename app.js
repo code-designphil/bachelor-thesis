@@ -11,6 +11,9 @@ import BurgerMenu from "./components/BurgerMenu.js";
 import ContactFormTeaser from "./components/ContactFormTeaser.js";
 import WeatherPage from "./components/WeatherPage.js";
 import WeatherGermanyPage from "./components/WeatherGermanyPage.js";
+import EconomyPage from "./components/EconomyPage.js";
+import BigArticleTeaser from "./components/BigArticleTeaser.js";
+import SmallArticleTeaser from "./components/SmallArticleTeaser.js";
 
 window.app = {};
 app.router = Router;
