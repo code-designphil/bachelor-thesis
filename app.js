@@ -17,6 +17,9 @@ import SmallArticleTeaser from "./components/SmallArticleTeaser.js";
 import FourOFour from "./components/404.js";
 import Toggle from "./components/Toggle.js";
 import FootballTicker from "./components/footballTicker.js";
+import MindestlohnPage from "./components/MindestlohnPage.js";
+import MehrMindestlohnPage from "./components/MehrMindestlohnPage.js";
+import ECarPage from "./components/ECarPage.js";
 
 window.app = {};
 app.router = Router;

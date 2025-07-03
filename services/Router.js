@@ -41,6 +41,15 @@ const Router = {
       case "/wirtschaft":
         pageElement = document.createElement("economy-page");
         break;
+      case "/mindestlohn":
+        pageElement = document.createElement("mindestlohn-page");
+        break;
+      case "/mehr-mindestlohn":
+        pageElement = document.createElement("mehr-mindestlohn-page");
+        break;
+      case "/e-autos":
+        pageElement = document.createElement("e-car-page");
+        break;
       default:
         pageElement = document.createElement("four-o-four-page");
         break;
