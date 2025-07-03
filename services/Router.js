@@ -42,6 +42,7 @@ const Router = {
         pageElement = document.createElement("economy-page");
         break;
       default:
+        pageElement = document.createElement("four-o-four-page");
         break;
     }
 

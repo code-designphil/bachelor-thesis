@@ -277,7 +277,7 @@
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .h3 {
@@ -292,6 +292,10 @@
     margin: 0 auto 0 auto;
   }
 
+  .text-center {
+    text-align: center;
+  }
+
   button[type="submit"] {
     background-color: var(--clr-hover-light);
     padding: 0 50px;
@@ -302,6 +306,10 @@
 
   .mt-m {
     margin-top: 1rem;
+  }
+
+  .mb-m {
+    margin-bottom: 1rem;
   }
 
   .py-m {
