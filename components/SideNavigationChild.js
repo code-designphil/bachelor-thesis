@@ -26,7 +26,7 @@ export default class SideNavigationChild extends HTMLElement {
           title="${title}"
           root-element-id="${rootElementId}"
           sub-links='${subLinks}'
-          is-full-width="${Boolean(mainLink)}"
+          is-full-width="${!Boolean(mainLink)}"
         ></open-sub-link-menu-button>
       </div>
     `;

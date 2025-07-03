@@ -15,6 +15,8 @@ import EconomyPage from "./components/EconomyPage.js";
 import BigArticleTeaser from "./components/BigArticleTeaser.js";
 import SmallArticleTeaser from "./components/SmallArticleTeaser.js";
 import FourOFour from "./components/404.js";
+import Toggle from "./components/Toggle.js";
+import FootballTicker from "./components/footballTicker.js";
 
 window.app = {};
 app.router = Router;
@@ -23,11 +25,4 @@ app.router = Router;
 // app.js has the defer attribute
 window.addEventListener("DOMContentLoaded", function () {
   app.router.init();
-});
-
-window.addEventListener("appcartchange", function (event) {
-  const badge = document.getElementById("badge");
-
-  badge.textContent = quantity;
-  badge.hidden = quantity == 0;
 });

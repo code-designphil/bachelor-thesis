@@ -35,39 +35,31 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
   async connectedCallback() {
     const title = this.getAttribute("title");
     const subLinks = JSON.parse(this.getAttribute("sub-links") || "[]");
-    const isFulllWidth = this.getAttribute("is-full-width") == "false";
+    const isFulllWidth = this.getAttribute("is-full-width") == "true";
+    const isSettings = title == "Einstellungen";
 
-    if (!subLinks.length && title != "Einstellungen") return null;
+    if (!subLinks.length && !isSettings) return null;
 
-    const hiddenContent = `
-      ${subLinks
-        .map(
-          (link) =>
-            `<side-navigation-child
-                title="${link.text}"
-                main-link="${link.href ?? `/${link.text.toLowerCase()}`}"
-             >
-             </side-navigation-child>`
-        )
-        .join("")}
-    `;
+    const hiddenContent = this.getHiddenContent(subLinks, isSettings);
 
     const styles = document.createElement("style");
     const request = await fetch("/components/OpenSubLinkMenuButton.css");
     styles.textContent = await request.text();
 
     const container = document.createElement("button");
-    container.ariaLabel = `${
-      this.#isExpanded ? "Close " : "Open "
-    }${title} menu`;
-    container.ariaExpanded = "false";
+    if (this.#isExpanded) {
+      container.ariaExpanded = "true";
+      container.ariaLabel = `Close ${title} menu`;
+    } else {
+      container.ariaExpanded = "false";
+      container.ariaLabel = `Open ${title} menu`;
+    }
     container.ariaHasPopup = "true";
 
-    container.onclick = (event) => {
+    container.onclick = () => {
       const sideNavigationWrapper = document
         .querySelector("side-navigation")
         .shadowRoot.querySelector(".side-navigation-wrapper");
-      const button = event.currentTarget;
 
       if (this.#isExpanded) {
         this.closeSubMenu(sideNavigationWrapper);
@@ -82,7 +74,6 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
         const backLink = this.createBackLink(title, sideNavigationWrapper);
         backButton.appendChild(backLink);
         sideNavigationWrapper.replaceChildren();
-        button.ariaExpanded = "true";
         const hiddenContentElement = document.createElement("ul");
         hiddenContentElement.innerHTML = hiddenContent;
         sideNavigationWrapper.appendChild(hiddenContentElement);
@@ -117,6 +108,24 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
     this.#root.innerHTML = "";
     this.#root.appendChild(styles);
     this.#root.appendChild(container);
+  }
+
+  getHiddenContent(subLinks, isSettings) {
+    if (subLinks.length) {
+      return `${subLinks
+        .map(
+          (link) =>
+            `<side-navigation-child
+                  title="${link.text}"
+                  main-link="${link.href ?? `/${link.text.toLowerCase()}`}"
+              >
+              </side-navigation-child>`
+        )
+        .join("")}
+        `;
+    } else if (isSettings) {
+      return "<settings-toggle text='Fußballticker' globalVariable='footballTicker'></settings-toggle>";
+    }
   }
 }
 

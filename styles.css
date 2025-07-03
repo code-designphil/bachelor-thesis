@@ -130,7 +130,8 @@
     font-size: 20px;
   }
 
-  header button {
+  header button,
+  .header-button {
     display: flex;
     align-items: center;
     background-color: unset;
