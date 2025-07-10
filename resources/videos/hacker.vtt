@@ -1,0 +1,169 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.640
+Hendrik Heinle ist Softwareprogrammierer.
+
+00:00:02.880 --> 00:00:06.960
+Vor vier Jahren arbeitet er für einen Kunden an einer Software und findet dabei
+
+00:00:07.440 --> 00:00:11.000
+zufällig eine Sicherheitslücke im Programm eines externen Unternehmens.
+
+00:00:11.240 --> 00:00:12.480
+Dort sind Daten von rund 700.000
+
+00:00:12.560 --> 00:00:15.000
+Verbrauchern leicht abrufbar.
+
+00:00:15.080 --> 00:00:17.520
+Ein Fund mit Folgen, der ihn erst mal schockiert.
+
+00:00:17.640 --> 00:00:20.360
+Ich habe nicht gerne meine Endverbraucherdaten oder meine
+
+00:00:20.440 --> 00:00:24.800
+persönlichen Daten oder Kreditkarten irgendwo in einer Datenbank, die
+
+00:00:24.880 --> 00:00:30.760
+prinzipiell jeder, der einen Internetzugang hat, auslesen kann.
+
+00:00:31.320 --> 00:00:35.280
+Heinle sichert Beweise und informiert das betroffene Unternehmen über die Lücke.
+
+00:00:35.360 --> 00:00:39.200
+Per Mail fordert er es auf, sie zu schließen und Behörden zu informieren.
+
+00:00:39.360 --> 00:00:44.000
+Das Unternehmen reagiert, unter anderem mit einer Strafanzeige gegen Heinle.
+
+00:00:44.480 --> 00:00:48.640
+Drei Monate später klingelt es bei ihm: Vor der Tür stehen zwei Paketboten,
+
+00:00:48.720 --> 00:00:50.480
+vermeintliche Paketboten.
+
+00:00:50.680 --> 00:00:53.880
+Ich habe aufgemacht und da wurde ich dann ziemlich direkt gefragt:
+
+00:00:53.960 --> 00:00:56.240
+„Ein Paket für Herr Heinle. Sind Sie Herr Heinle?
+
+00:00:56.840 --> 00:01:00.920
+Und das habe ich natürlich bejaht und im nächsten Moment:
+
+00:01:01.040 --> 00:01:03.800
+riesengeschrei, riesengetose. Polizei.
+
+00:01:04.080 --> 00:01:07.200
+Und ich habe mich an der Wand wiedergefunden,
+
+00:01:07.280 --> 00:01:08.760
+mit Handschellen auf dem Rücken.
+
+00:01:09.480 --> 00:01:13.480
+Die Beamten wollen ihn überraschen, damit er keine Dateien verschlüsselen kann.
+
+00:01:13.680 --> 00:01:17.280
+USB-Sticks, Festplatten, Laptops: Alles wird beschlagnahmt.
+
+00:01:17.360 --> 00:01:21.840
+Mit seinem Hinweis auf die Datenlücke wollte er etwas Gutes tun und endet als
+
+00:01:21.920 --> 00:01:23.880
+Beschuldigter in einem Strafverfahren.
+
+00:01:24.240 --> 00:01:27.320
+Das Landgericht Aachen verurteilt ihn zu einer Geldstrafe wegen
+
+00:01:27.600 --> 00:01:28.680
+Ausspählen von Daten.
+
+00:01:28.840 --> 00:01:32.040
+Bestraft werden alle, die sich unbefugt Zugang zu fremden und
+
+00:01:32.120 --> 00:01:33.600
+gesicherten Daten verschaffen.
+
+00:01:33.680 --> 00:01:35.600
+Das Urteil ist noch nicht rechtskräftig.
+
+00:01:36.160 --> 00:01:39.560
+Das Gesetz sorgt bei Programmierern, IT-Sicherheitsforschern und
+
+00:01:39.640 --> 00:01:41.200
+Hobby-Hackern für Unruhe.
+
+00:01:41.760 --> 00:01:45.120
+Das sei kontraproduktiv, findet dieser Experte für IT-Sicherheit.
+
+00:01:45.600 --> 00:01:48.680
+Die IT-Sicherheit in Deutschland ist eher desolat aufgestellt.
+
+00:01:48.880 --> 00:01:52.640
+Die Sicherheitsforscherin-Community könnte sehr, sehr viele Meldungen absetzen
+
+00:01:52.720 --> 00:01:54.360
+und sagen: „Schließt diese Lücken"
+
+00:01:54.640 --> 00:01:59.120
+Davon bräuchten wir viel mehr, aber durch die grundsätzliche Kriminalisierung ist
+
+00:01:59.200 --> 00:02:01.360
+das eher ein Problem für diejenigen, die es melden.
+
+00:02:01.840 --> 00:02:06.440
+Ex-justizminister Buschmann wollte das Hacken mit guten Absichten erlauben, doch
+
+00:02:06.520 --> 00:02:09.240
+das Vorhaben scheiterte am vorzeitigen Ampel aus.
+
+00:02:09.520 --> 00:02:12.600
+Der Mittelstandsbund sagt, manche Unternehmen finden es ganz
+
+00:02:12.680 --> 00:02:14.160
+gut, wenn es verboten bleibt.
+
+00:02:14.240 --> 00:02:17.400
+Sie fürchten die gut gemeinte Hilfe von etwa Hobbyhackern,
+
+00:02:17.480 --> 00:02:19.120
+sogenannten Grey Hat Hackern.
+
+00:02:19.400 --> 00:02:24.680
+Wenn die Grey Hat Hacker auf die Systeme zugreifen, besteht immer die Gefahr, dass
+
+00:02:24.760 --> 00:02:29.520
+die Daten verändert werden oder an die Öffentlichkeit herangetragen werden, wovon
+
+00:02:29.600 --> 00:02:32.120
+dann Reputationsschäden für die Unternehmen ausgehen.
+
+00:02:32.920 --> 00:02:37.360
+Mit der neuen Koalition von Union und SPD scheint es unwahrscheinlich, dass Grey
+
+00:02:37.840 --> 00:02:39.680
+Hat Hacker bald legal unterwegs sind.
+
+00:02:39.760 --> 00:02:43.040
+Im Koalitionsvertrag steht: „Sie wollen Rechtssicherheit für die
+
+00:02:43.120 --> 00:02:44.920
+IT-Sicherheitsforschung schaffen."
+
+00:02:45.120 --> 00:02:48.000
+Was das genau meint, deuten Union und SPD unterschiedlich.
+
+00:02:48.320 --> 00:02:52.520
+Wenn IT-Spezialisten wie Hendrik Heinle Sicherheitslücken auftun, droht ihnen
+
+00:02:52.600 --> 00:02:54.360
+also weiter Ärger mit der Justiz.
+
+00:02:54.840 --> 00:02:58.680
+Das Ganze ist natürlich ein sehr tief eingreifendes Erlebnis gewesen,
+
+00:02:58.760 --> 00:03:01.760
+eine sehr traumatische Erfahrung.
+
+00:03:02.040 --> 00:03:05.200
+Er sagt, die nächste Lücke würde er nicht mehr melden.
