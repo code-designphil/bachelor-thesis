@@ -30,7 +30,12 @@ const Router = {
                 pageElement = document.createElement("contact-page");
                 break;
             case "/kontakt-sendungen":
-                pageElement = document.createElement("contact-programs-page");
+                pageElement = document.createElement("contact-sub-page");
+                pageElement.setAttribute("subType", "program");
+                break;
+            case "/kontakt-inhalt-und-sprache":
+                pageElement = document.createElement("contact-sub-page");
+                pageElement.setAttribute("subType", "content-and-language");
                 break;
             case "/wetter":
                 pageElement = document.createElement("weather-page");
@@ -49,6 +54,18 @@ const Router = {
                 break;
             case "/e-autos":
                 pageElement = document.createElement("e-car-page");
+                break;
+            case "/wissen":
+                pageElement = document.createElement("knowledge-page");
+                break;
+            case "/wissen/sprung":
+                pageElement = document.createElement("sprung-page");
+                break;
+            case "/wissen/grillen":
+                pageElement = document.createElement("grillen-page");
+                break;
+            case "/wissen/menschheit":
+                pageElement = document.createElement("menschheit-page");
                 break;
             case "/inland":
                 pageElement = document.createElement("domestic-page");

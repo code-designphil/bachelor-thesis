@@ -8,11 +8,11 @@
         tagesschau.de
     </title>
 
-    <script defer src="app.js" type="module"></script>
+    <script defer src="/app.js" type="module"></script>
 
-    <link href="styles.css" rel="stylesheet"/>
-    <link href="app.webmanifest" rel="manifest"/>
-    <link href="resources/svg/logo.svg" rel="icon"/>
+    <link href="/styles.css" rel="stylesheet"/>
+    <link href="/app.webmanifest" rel="manifest"/>
+    <link href="/resources/svg/logo.svg" rel="icon"/>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <img
                 alt=""
                 aria-hidden="true"
-                src="resources/svg/logo.svg"
+                src="/resources/svg/logo.svg"
                 width="60"
         />
         <span class="h3" style="padding-left: 10px; font-weight: 300"
@@ -53,13 +53,10 @@
         <side-navigation-child
                 main-link="/ausland"
                 sub-links='[
-              {"href":"/inland","text":"Startseite Ausland"},
-              {"href":"/inland/innenpolitik","text":"Europa"},
-              {"href":"/inland/gesellschaft","text":"Amerika"},
-              {"href":"/inland/regional","text":"Afrika"},
-              {"href":"/inland/deutschlandtrend","text":"Asien"},
-              {"href":"/wahl","text":"Ozeanien"},
-              {"href":"/inland/mittendrin","text":"Studios und Korrespondenten"}
+              {"href":"/ausland","text":"Startseite Ausland"},
+              {"href":"/ausland/europa","text":"Europa"},
+              {"href":"/ausland/amerika","text":"Amerika"},
+              {"href":"/ausland/afrika","text":"Afrika"}
             ]'
                 title="Ausland"
         >
@@ -70,13 +67,7 @@
               {"href":"/inland","text":"Startseite Wirtschaft"},
               {"href":"/inland/innenpolitik","text":"Börsenkurse"},
               {"href":"/inland/gesellschaft","text":"Verbraucher"},
-              {"href":"/inland/regional","text":"Unternehmen"},
-              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
-              {"href":"/wahl","text":"Finanzen"},
-              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
-              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
-              {"href":"/inland/mittendrin","text":"Energie"},
-              {"href":"/inland/mittendrin","text":"Digitales"}
+              {"href":"/inland/regional","text":"Unternehmen"}
             ]'
                 title="Wirtschaft"
         >
@@ -84,35 +75,12 @@
         <side-navigation-child
                 main-link="/wissen"
                 sub-links='[
-              {"href":"/inland","text":"Startseite Wirtschaft"},
-              {"href":"/inland/innenpolitik","text":"Börsenkurse"},
-              {"href":"/inland/gesellschaft","text":"Verbraucher"},
-              {"href":"/inland/regional","text":"Unternehmen"},
-              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
-              {"href":"/wahl","text":"Finanzen"},
-              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
-              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
-              {"href":"/inland/mittendrin","text":"Energie"},
-              {"href":"/inland/mittendrin","text":"Digitales"}
+              {"href":"/wissen","text":"Startseite Wissen"},
+              {"href":"/wissen/gesundheit","text":"Gesundheit"},
+              {"href":"/wissen/klima","text":"Klima & Umwelt"},
+              {"href":"/wissen/forschung","text":"Forschung"}
             ]'
                 title="Wissen"
-        >
-        </side-navigation-child>
-        <side-navigation-child
-                main-link="/faktenfinder"
-                sub-links='[
-              {"href":"/inland","text":"Startseite Wirtschaft"},
-              {"href":"/inland/innenpolitik","text":"Börsenkurse"},
-              {"href":"/inland/gesellschaft","text":"Verbraucher"},
-              {"href":"/inland/regional","text":"Unternehmen"},
-              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
-              {"href":"/wahl","text":"Finanzen"},
-              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
-              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
-              {"href":"/inland/mittendrin","text":"Energie"},
-              {"href":"/inland/mittendrin","text":"Digitales"}
-            ]'
-                title="Faktenfinder"
         >
         </side-navigation-child>
         <side-navigation-child main-link="/investigativ" title="Investigativ">
@@ -120,16 +88,9 @@
         <side-navigation-child
                 main-link="/wahl"
                 sub-links='[
-              {"href":"/inland","text":"Startseite Wirtschaft"},
-              {"href":"/inland/innenpolitik","text":"Börsenkurse"},
-              {"href":"/inland/gesellschaft","text":"Verbraucher"},
-              {"href":"/inland/regional","text":"Unternehmen"},
-              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
-              {"href":"/wahl","text":"Finanzen"},
-              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
-              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
-              {"href":"/inland/mittendrin","text":"Energie"},
-              {"href":"/inland/mittendrin","text":"Digitales"}
+              {"href":"/wahl","text":"Startseite Wahlergebnisse"},
+              {"href":"/wahl/bundestag","text":"Bundestagswahl"},
+              {"href":"/inland/europa","text":"Europäisches Parlament"}
             ]'
                 title="Wahlen"
         >
@@ -137,16 +98,9 @@
         <side-navigation-child
                 main-link="/wetter"
                 sub-links='[
-              {"href":"/inland","text":"Startseite Wirtschaft"},
-              {"href":"/inland/innenpolitik","text":"Börsenkurse"},
-              {"href":"/inland/gesellschaft","text":"Verbraucher"},
-              {"href":"/inland/regional","text":"Unternehmen"},
-              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
-              {"href":"/wahl","text":"Finanzen"},
-              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
-              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
-              {"href":"/inland/mittendrin","text":"Energie"},
-              {"href":"/inland/mittendrin","text":"Digitales"}
+              {"href":"/wetter","text":"Startseite Wetter"},
+              {"href":"/wettervorhersage-deutschland","text":"Deutschland"},
+              {"href":"/wetter/europa","text":"Europa"}
             ]'
                 title="Wetter"
         >
@@ -154,41 +108,6 @@
         <side-navigation-child
                 main-link="/multimedia/livestreams"
                 title="tagesschau24 LIVE"
-        >
-        </side-navigation-child>
-        <side-navigation-child
-                main-link="/wirtschaft"
-                sub-links='[
-              {"href":"/inland","text":"Startseite Wirtschaft"},
-              {"href":"/inland/innenpolitik","text":"Börsenkurse"},
-              {"href":"/inland/gesellschaft","text":"Verbraucher"},
-              {"href":"/inland/regional","text":"Unternehmen"},
-              {"href":"/inland/deutschlandtrend","text":"Arbeitsmarkt"},
-              {"href":"/wahl","text":"Finanzen"},
-              {"href":"/inland/mittendrin","text":"Untermenü Finanzen einblenden"},
-              {"href":"/inland/mittendrin","text":"Weltwirtschaft"},
-              {"href":"/inland/mittendrin","text":"Energie"},
-              {"href":"/inland/mittendrin","text":"Digitales"}
-            ]'
-                title="Videos & Audios"
-        >
-        </side-navigation-child>
-        <side-navigation-child
-                main-link="/mehr"
-                sub-links='[
-              {"href":"meta.tagesschau.de","text":"Ihre Meinung"},
-              {"href":"/kontakt","text":"Kontakt"},
-              {"href":"korrekturen","text":"Korrekturen"},
-              {"text":"Impressum"},
-              {"text":"Datenschutz"},
-              {"href":"/infoservice","text":"Wo Sie uns sonst noch finden"},
-              {"href":"/ueber-uns","text":"Über uns"},
-              {"text":"Spendenkonten"},
-              {"text":"Archiv"},
-              {"href":"/archiv/allemeldungen","text":"7-Tage-Überblick"},
-              {"href":"/thema","text":"Themen-Überblick"}
-            ]'
-                title="Mehr"
         >
         </side-navigation-child>
         <side-navigation-child title="Einstellungen"></side-navigation-child>
@@ -486,12 +405,11 @@
                             <legend>Ihre Angaben</legend>
                             <div class="form-element-wrapper first">
                                 <select
-                                        aria-describedby="aria_anliegen"
-                                        aria-invalid="false"
+                                        aria-describedby="anliegen"
                                         aria-required="true"
                                         id="anliegen"
                                         name="anliegen"
-                                        required=""
+                                        required="required"
                                 >
                                     <option disabled="" selected="" value="">
                                         - Bitte wählen -
@@ -506,12 +424,11 @@
                             <div class="form-element-wrapper">
                                 <div>
                                     <select
-                                            aria-describedby="aria_sendung"
-                                            aria-invalid="false"
+                                            aria-describedby="sendung"
                                             aria-required="true"
                                             id="sendung"
                                             name="sendung"
-                                            required=""
+                                            required="required"
                                     >
                                         <option disabled="" selected="" value="">
                                             - Bitte wählen -
@@ -536,8 +453,7 @@
                             <div class="form-element-wrapper">
                                 <div>
                                     <input
-                                            aria-describedby="aria_sendedatum"
-                                            aria-invalid="false"
+                                            aria-describedby="sendedatum"
                                             id="sendedatum"
                                             name="sendedatum"
                                             placeholder="Sendedatum"
@@ -549,8 +465,7 @@
                             <div class="form-element-wrapper">
                                 <div>
                                     <input
-                                            aria-describedby="aria_sendezeit"
-                                            aria-invalid="false"
+                                            aria-describedby="sendezeit"
                                             id="sendezeit"
                                             name="sendezeit"
                                             placeholder="Sendezeit"
@@ -562,8 +477,7 @@
                             <div class="form-element-wrapper">
                                 <div>
                                     <input
-                                            aria-describedby="aria_internetadresse"
-                                            aria-invalid="false"
+                                            aria-describedby="internetadresse"
                                             id="internetadresse"
                                             name="internetadresse"
                                             placeholder="Internetadresse"
@@ -575,27 +489,26 @@
                             <div class="form-textarea__wrapper form-element-wrapper">
                                 <div>
                       <textarea
-                              aria-describedby="aria_nachricht max-length_nachricht"
-                              aria-invalid="false"
+                              aria-describedby="nachricht max-length_nachricht"
+
                               aria-required="true"
                               cols="30"
                               id="nachricht"
                               maxlength="300"
                               name="nachricht"
                               placeholder="Ihre Nachricht*"
-                              required=""
+                              required="required"
                               rows="6"
                       ></textarea
                       ><label for="nachricht"
-                                >Ihre Nachricht* <span>(0/300)</span></label
+                                >Ihre Nachricht*</label
                                 >
                                 </div>
                             </div>
                             <div class="form-element-wrapper">
                                 <div>
                                     <input
-                                            aria-describedby="aria_ihrname"
-                                            aria-invalid="false"
+                                            aria-describedby="ihrname"
                                             id="ihrname"
                                             name="ihrname"
                                             placeholder="Ihr Name"
@@ -606,13 +519,12 @@
                             <div class="form-element-wrapper">
                                 <div>
                                     <input
-                                            aria-describedby="aria_ihreemailadresse"
-                                            aria-invalid="false"
+                                            aria-describedby="ihreemailadresse"
                                             aria-required="true"
                                             id="ihreemailadresse"
                                             name="ihreemailadresse"
                                             placeholder="Ihre E-Mail-Adresse*"
-                                            required=""
+                                            required="required"
                                             type="email"
                                     /><label for="ihreemailadresse"
                                 >Ihre E-Mail-Adresse*</label
@@ -622,13 +534,12 @@
                             <div class="form-element-wrapper">
                                 <div>
                                     <input
-                                            aria-describedby="aria_emailadressewiederholen"
-                                            aria-invalid="false"
+                                            aria-describedby="emailadressewiederholen"
                                             aria-required="true"
                                             id="emailadressewiederholen"
                                             name="emailadressewiederholen"
                                             placeholder="E-Mail-Adresse wiederholen*"
-                                            required=""
+                                            required="required"
                                             type="email"
                                     /><label for="emailadressewiederholen"
                                 >E-Mail-Adresse wiederholen*</label
@@ -640,17 +551,246 @@
                             <legend>Datenschutz</legend>
                             <div class="form-element-wrapper first data-security-wrapper">
                                 <input
-                                        aria-invalid="false"
+
                                         aria-required="true"
                                         id="datenschutz"
                                         name="datenschutz"
-                                        required=""
+                                        required="required"
                                         type="checkbox"
                                         value="Datenschutz"
                                 />
                                 <label
-                                        aria-describedby="aria_datenschutz"
-                                        aria-invalid="false"
+                                        aria-describedby="datenschutz"
+
+                                        aria-required="true"
+                                        class="data-security"
+                                        for="datenschutz"
+                                ><span
+                                >Ich stimme den&nbsp;<a
+                                        href="/kontakt_und_hilfe/datenschutz"
+                                        style="text-decoration: underline"
+                                        title="Datenschutzerklärung"
+                                >Datenschutzbestimmungen</a
+                                >&nbsp;zu.<br/><br/>Alle personenbezogenen Daten
+                        werden ausschließlich für interne statistische Zwecke
+                        verwendet. Die Daten werden selbstverständlich
+                        vertraulich behandelt und nicht an Dritte
+                        weitergegeben.*</span
+                                ></label
+                                >
+                            </div>
+                        </fieldset>
+                        <div
+                                style="display: flex; justify-content: end; margin-top: 30px"
+                        >
+                            <button type="submit">Abschicken</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </section>
+</template>
+
+<template id="contact-content-and-language-page-template">
+    <section class="wrapper bg-signature">
+        <article>
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLkm68/16x9-640/tagesschau-app-logo-103.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLk4K0/16x9-768/tagesschau-app-logo-103.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLp4nc/20x9-960/tagesschau-app-logo-103.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLpihI/20x9-1280/tagesschau-app-logo-103.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLkm68/16x9-640/tagesschau-app-logo-103.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLk4K0/16x9-768/tagesschau-app-logo-103.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLp4nc/20x9-960/tagesschau-app-logo-103.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLpihI/20x9-1280/tagesschau-app-logo-103.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/7e19f8af-f88f-42dd-bb75-545a5c84c3be/AAABlsUOobo/AAABkZLpihI/20x9-1280/tagesschau-app-logo-103.jpg"
+                     alt="Logo der tagesschau-App" title="Logo der tagesschau-App | Imago">
+            </picture>
+            <div style="width: 66%; margin: 1rem auto">
+                <h1>
+                    <span class="rooftitle">Kontakt</span>
+                    <span>Web und App: Inhalt und Sprache</span>
+                </h1>
+                <p class="metatextline">Stand: 25.04.2024 12:45 Uhr</p>
+                <p>
+                    <strong style="line-height: 1"
+                    >Haben Sie inhaltliches oder sprachliches Feedback zu einer unserer Meldungen auf tagesschau.de oder
+                        in der tagesschau-App?</strong
+                    >
+                </p>
+                <br/>
+                <p>
+                    Liebe Leserin, lieber Leser,<br/><br/>
+                    inhaltliches sowie sprachliches Feedback zu Beiträgen auf tagesschau.de
+                    oder in der tagesschau-App können Sie an dieser Stelle loswerden.<br/><br/>
+                    <strong>
+                        Sollten Sie sich auf einen konkreten Artikel beziehen, geben Sie bitte auch die
+                        Internetadresse der
+                        Meldung oder die Beitragsüberschrift in dem dafür vorgesehenen Feld an. Das erleichtert uns das
+                        Auffinden der
+                        betreffenden Meldung.
+                    </strong><br/><br/>
+                    Bitte beachten Sie auch die Sicherheitsabfrage, mit der die Tagesschau
+                    einen Missbrauch des Kontaktformulars durch Spamautomaten verhindern will.
+                </p>
+                <div class="form-wrapper">
+                    <form>
+                        <h2 style="margin-bottom: 10px">Kontaktformular</h2>
+                        <p style="margin-bottom: 10px">
+                            *) Diese Felder müssen ausgefüllt werden. Alle anderen Angaben
+                            sind freiwillig.
+                        </p>
+                        <fieldset>
+                            <legend>Ihre Angaben</legend>
+                            <div class="form-element-wrapper first">
+                                <select
+                                        aria-describedby="anliegen"
+                                        aria-required="true"
+                                        id="anliegen"
+                                        name="anliegen"
+                                        required="required"
+                                >
+                                    <option disabled="" selected="" value="">
+                                        - Bitte wählen -
+                                    </option>
+                                    <option value="feedback">Fehler melden</option>
+                                    <option value="autogrammwunsch">Hinweis geben</option>
+                                    <option value="sonstiges">Sonstiges</option>
+                                </select>
+                                <label class="static" for="anliegen">Anliegen*</label>
+                            </div>
+
+                            <div class="form-element-wrapper">
+                                <div>
+                                    <select
+                                            aria-describedby="wo gefunden"
+                                            aria-required="true"
+                                            id="wo-gefunden"
+                                            name="wo-gefunden"
+                                            required="required"
+                                    >
+                                        <option disabled="" selected="" value="">
+                                            - Bitte wählen -
+                                        </option>
+                                        <option value="tagesschau.de">tagesschau.de</option>
+                                        <option value="tagesschau-App">tagesschau-App</option>
+                                    </select>
+                                    <label class="static" for="wo-gefunden">Wo gefunden?*</label>
+                                </div>
+                            </div>
+
+                            <div class="form-element-wrapper">
+                                <div>
+                                    <input
+                                            aria-describedby="link zu meldung"
+                                            id="link"
+                                            name="link"
+                                            placeholder="Link zur Meldung"
+                                            type="text"
+                                    /><label for="link">Link zur Meldung</label>
+                                </div>
+                            </div>
+
+                            <div class="form-element-wrapper">
+                                <div>
+                                    <input
+                                            aria-describedby="Titel der Meldung"
+                                            id="titel"
+                                            name="sendezeit"
+                                            placeholder="Titel der Meldung"
+                                            type="text"
+                                    /><label for="sendezeit">Titel der Meldung</label>
+                                </div>
+                            </div>
+
+                            <div class="form-textarea__wrapper form-element-wrapper">
+                                <div>
+                                  <textarea
+                                          aria-describedby="nachricht max-length_nachricht"
+
+                                          aria-required="true"
+                                          cols="30"
+                                          id="nachricht"
+                                          maxlength="300"
+                                          name="nachricht"
+                                          placeholder="Ihre Nachricht*"
+                                          required="required"
+                                          rows="6"
+                                  >
+                                  </textarea>
+                                    <label for="nachricht">Ihre Nachricht*</label>
+                                </div>
+                            </div>
+                            <div class="form-element-wrapper">
+                                <div>
+                                    <input
+                                            aria-describedby="ihrname"
+
+                                            id="ihrname"
+                                            name="ihrname"
+                                            placeholder="Ihr Name"
+                                            type="text"
+                                    /><label for="ihrname">Ihr Name</label>
+                                </div>
+                            </div>
+                            <div class="form-element-wrapper">
+                                <div>
+                                    <input
+                                            aria-describedby="ihreemailadresse"
+
+                                            aria-required="true"
+                                            id="ihreemailadresse"
+                                            name="ihreemailadresse"
+                                            placeholder="Ihre E-Mail-Adresse*"
+                                            required="required"
+                                            type="email"
+                                    /><label for="ihreemailadresse"
+                                >Ihre E-Mail-Adresse*</label
+                                >
+                                </div>
+                            </div>
+                            <div class="form-element-wrapper">
+                                <div>
+                                    <input
+                                            aria-describedby="emailadressewiederholen"
+
+                                            aria-required="true"
+                                            id="emailadressewiederholen"
+                                            name="emailadressewiederholen"
+                                            placeholder="E-Mail-Adresse wiederholen*"
+                                            required="required"
+                                            type="email"
+                                    /><label for="emailadressewiederholen"
+                                >E-Mail-Adresse wiederholen*</label
+                                >
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Datenschutz</legend>
+                            <div class="form-element-wrapper first data-security-wrapper">
+                                <input
+
+                                        aria-required="true"
+                                        id="datenschutz"
+                                        name="datenschutz"
+                                        required="required"
+                                        type="checkbox"
+                                        value="Datenschutz"
+                                />
+                                <label
+                                        aria-describedby="datenschutz"
+
                                         aria-required="true"
                                         class="data-security"
                                         for="datenschutz"
@@ -2034,6 +2174,669 @@
                     zeitlich gestreckten aber immer noch gültigen ambitionierten
                     Emissionsvorgaben der EU sorgen für einen anhaltend hohen Druck
                     auf die Hersteller, mehr Elektroautos zu verkaufen.
+                </p>
+                <br/>
+                <nav aria-label="Teilen über Social-Media-Links und E-Mail">
+                    <ul class="socialbuttons">
+                        <li>
+                            <a
+                                    aria-label="Facebook"
+                                    href="http://www.facebook.de"
+                                    onclick='window.open("https:\/\/www.facebook.com\/sharer.php?u=https:\/\/www.tagesschau.de\/wirtschaft\/arbeitsmarkt\/mindestlohn-anstieg-100.html?at_medium=tagesschau%26at_campaign=Facebook%26at_content=SiteSharing%26t=Mindestlohn%20soll%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%26desc="); return false;'
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Facebook</title>
+                        <path
+                                d="M24 0C10.75 0 0 10.75 0 24s10.75 24 24 24 24-10.75 24-24S37.25 0 24 0Zm7 15.39h-2.2c-2.19 0-2.86 1.33-2.86 2.69v3.23h4.86l-.77 4.97h-4.09v10.56h-5.48V26.28H16v-4.97h4.46v-3.79c0-4.3 2.61-6.68 6.62-6.68 1.91 0 3.92.34 3.92.34v4.22-.01Z"
+                                fill="#1C76ED"
+                        ></path>
+                        <path
+                                d="M20.46 17.52v3.79H16v4.97h4.46v10.56h5.48V26.28h4.09l.77-4.97h-4.86v-3.23c0-1.35.67-2.69 2.86-2.69H31v-4.22s-2.01-.34-3.92-.34c-4.01 0-6.62 2.38-6.62 6.68v.01Z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    aria-label="WhatsApp"
+                                    href="http://www.whatsapp.com"
+                                    onclick='window.open("https:\/\/api.whatsapp.com\/send?text=https:\/\/www.tagesschau.de\/wirtschaft\/arbeitsmarkt\/mindestlohn-anstieg-100.html?at_medium=tagesschau%26at_campaign=WhatsApp%26at_content=SiteSharing"); return false'
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Whatsapp</title>
+                        <path
+                                d="M24 13.59c-5.73 0-10.41 4.67-10.41 10.41 0 1.82.49 3.63 1.41 5.22l.55.95-.28 1.05-.58 2.09 2.09-.58 1.05-.28.95.55c1.59.93 3.39 1.41 5.22 1.41 5.73 0 10.41-4.67 10.41-10.41S29.74 13.59 24 13.59Zm6.75 14.86c-.29.74-1.66 1.42-2.33 1.52-1.46.19-4.14-.81-4.12-.78-3.46-1.39-5.71-4.61-5.89-4.82-.18-.21-1.41-1.73-1.41-3.31s.89-2.35 1.2-2.67c.31-.32.69-.4.92-.4h.66c.21.02.49-.07.77.55.29.64.98 2.2 1.07 2.37.08.16.15.35.03.56-.66 1.22-1.37 1.18-1.01 1.74 1.34 2.13 2.66 2.86 4.69 3.8.33.16.54.14.74-.08.21-.22.87-.94 1.1-1.26.23-.33.46-.27.77-.16.32.11 2.02.87 2.36 1.03.34.15.57.23.66.38.08.14.08.77-.2 1.52l-.01.01Z"
+                                fill="#00D856"
+                        ></path>
+                        <path
+                                d="M41.8 7.9C37.41 3.05 31.06 0 24 0 10.75 0 0 10.75 0 24c0 6.06 2.25 11.6 5.96 15.82C10.36 44.83 16.81 48 24 48c13.25 0 24-10.75 24-24 0-6.2-2.35-11.84-6.2-16.1ZM24 37c-2.38 0-4.6-.64-6.52-1.77L11 37l1.77-6.48A12.986 12.986 0 0 1 11 24c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13Z"
+                                fill="#00D856"
+                        ></path>
+                        <path
+                                d="M24 11c-7.18 0-13 5.82-13 13 0 2.38.65 4.6 1.77 6.52L11 37l6.48-1.77C19.4 36.35 21.62 37 24 37c7.18 0 13-5.82 13-13s-5.82-13-13-13Zm0 23.41c-1.82 0-3.63-.49-5.22-1.41l-.95-.55-1.05.28-2.09.58.58-2.09.28-1.05-.55-.95c-.93-1.59-1.41-3.39-1.41-5.22 0-5.73 4.67-10.41 10.41-10.41S34.41 18.26 34.41 24 29.74 34.41 24 34.41Z"
+                                fill="#fff"
+                        ></path>
+                        <path
+                                d="M30.29 26.56c-.34-.16-2.04-.93-2.36-1.03-.31-.11-.54-.16-.77.16-.23.32-.89 1.03-1.1 1.26-.2.21-.41.24-.74.08-2.03-.94-3.35-1.67-4.69-3.8-.36-.56.35-.52 1.01-1.74.11-.21.05-.4-.03-.56-.08-.16-.77-1.73-1.07-2.37-.28-.62-.56-.53-.77-.55h-.66c-.23 0-.61.08-.92.4-.31.32-1.2 1.09-1.2 2.67 0 1.58 1.23 3.09 1.41 3.31.18.21 2.43 3.43 5.89 4.82-.01-.03 2.67.98 4.12.78.67-.1 2.04-.77 2.33-1.52.28-.74.28-1.38.2-1.52-.08-.15-.31-.22-.66-.38l.01-.01Z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    aria-label="Mail"
+                                    href="mailto:?subject=Link-Tipp:%20Mindestlohn%20soll%20in%20zwei%20Schritten%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%20(tagesschau.de)&amp;body=Link-Tipp:%20Mindestlohn%20soll%20in%20zwei%20Schritten%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%20(tagesschau.de)%0Ahttps://www.tagesschau.de/wirtschaft/arbeitsmarkt/mindestlohn-anstieg-100.html?at_medium%3Dtagesschau%26at_campaign%3DMail%26at_content%3DSiteSharing%0A%0A"
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Mail</title>
+                        <path
+                                d="M43.9 7.2H2.3l20.1 15.9c.9.7 2.2.7 3-.1L43.9 7.2zM13.7 22.3 0 11.5v25.8c0-.1 13.7-15 13.7-15zM48 10 34 22l14 15.2V10zM30.4 25.1l-4.8 4.1c-.9.7-2.2.8-3 .1l-5.1-4L3.2 40.8h41.5L30.4 25.1z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </article>
+    </section>
+</template>
+
+<template id="knowledge-page-template">
+    <section class="wrapper bg-signature">
+        <h1 class="ressort-heading">
+            <span class="rooftitle">RESSORT</span>
+            <span class="heading">WIRTSCHAFT</span>
+        </h1>
+        <big-article-teaser
+                copy="Raunen am Beckenrand, eine gewaltige Fontäne: Eine wissenschaftliche Untersuchung zeigt, mit welcher Technik der Sprung ins Wasser den größten Spritz-Effekt hat. Mit dabei: ein extra gebauter Roboter."
+                href="/wissen/sprung"
+                rooftitle="Sprung ins Wasser"
+                title="So gelingt der größte Splash"
+        >
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLkm68/16x9-640/arschbombe-106.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLk4K0/16x9-768/arschbombe-106.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLp4nc/20x9-960/arschbombe-106.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLpihI/20x9-1280/arschbombe-106.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLkm68/16x9-640/arschbombe-106.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLk4K0/16x9-768/arschbombe-106.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLp4nc/20x9-960/arschbombe-106.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLpihI/20x9-1280/arschbombe-106.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLpihI/20x9-1280/arschbombe-106.jpg"
+                     alt="Ein Mann springt macht eine sogenannte Arschbombe in einem Schwimmbad."
+                     title="Ein Mann springt macht eine sogenannte Arschbombe in einem Schwimmbad. | dpa">
+            </picture>
+        </big-article-teaser>
+    </section>
+    <section class="wrapper bg-signature py-m">
+        <small-article-teaser
+                copy="Grillen hat in Sachen Gesundheit keinen guten Ruf - gegrilltes Fleisch etwa kann krebserregende Stoffe enthalten. Doch es gibt Tipps, mit denen sich das Risiko eindämmen lässt."
+                href="/wissen/grillen"
+                rooftitle="Ernährung"
+                title="So geht gesundes Grillen"
+        >
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLkm68/16x9-640/schaschlik-grill-100.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLk4K0/16x9-768/schaschlik-grill-100.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLp4nc/20x9-960/schaschlik-grill-100.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLpihI/20x9-1280/schaschlik-grill-100.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLkm68/16x9-640/schaschlik-grill-100.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLk4K0/16x9-768/schaschlik-grill-100.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLp4nc/20x9-960/schaschlik-grill-100.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLpihI/20x9-1280/schaschlik-grill-100.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLpihI/20x9-1280/schaschlik-grill-100.jpg"
+                     alt="Ein Schaschlik-Spieß liegt auf einem Gasgrill."
+                     title="Ein Schaschlik-Spieß liegt auf einem Gasgrill. | picture alliance / dpa Themendie">
+            </picture>
+        </small-article-teaser>
+    </section>
+    <section class="wrapper bg-signature mt-m py-m">
+        <small-article-teaser
+                copy="In einigen Regionen nimmt die Bevölkerung schnell zu, anderswo schrumpft sie. Forschende sagen, die Geburtenrate wäre ausgeglichener, wenn alle Menschen frei entscheiden könnten, wie viele Kinder sie haben wollen."
+                href="/wissen/menschheit"
+                rooftitle="Weltbevölkerungstag"
+                title="Die Menschheit wächst langsamer"
+        >
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLkm68/16x9-640/menschen-indien-100.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLk4K0/16x9-768/menschen-indien-100.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLp4nc/20x9-960/menschen-indien-100.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLpihI/20x9-1280/menschen-indien-100.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLkm68/16x9-640/menschen-indien-100.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLk4K0/16x9-768/menschen-indien-100.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLp4nc/20x9-960/menschen-indien-100.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLpihI/20x9-1280/menschen-indien-100.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLpihI/20x9-1280/menschen-indien-100.jpg"
+                     alt="Menschen drängen sich auf einem Markt in Mumbai."
+                     title="Menschen drängen sich auf einem Markt in Mumbai. | dpa">
+            </picture>
+        </small-article-teaser>
+    </section>
+</template>
+
+<template id="sprung-page-template">
+    <section class="wrapper bg-signature">
+        <article>
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLkm68/16x9-640/arschbombe-106.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLk4K0/16x9-768/arschbombe-106.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLp4nc/20x9-960/arschbombe-106.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLpihI/20x9-1280/arschbombe-106.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLkm68/16x9-640/arschbombe-106.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLk4K0/16x9-768/arschbombe-106.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLp4nc/20x9-960/arschbombe-106.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLpihI/20x9-1280/arschbombe-106.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/839065c9-356b-497d-8f77-29c668077314/AAABl8qa5OU/AAABkZLpihI/20x9-1280/arschbombe-106.jpg"
+                     alt="Ein Mann springt macht eine sogenannte Arschbombe in einem Schwimmbad."
+                     title="Ein Mann springt macht eine sogenannte Arschbombe in einem Schwimmbad. | dpa">
+            </picture>
+            <div style="width: 66%; margin: 1rem auto">
+                <h1 style="margin-top: 16px">
+                    <span class="rooftitle">Sprung ins Wasser</span>
+                    <span>So gelingt der größte Splash</span>
+                </h1>
+                <p class="metatextline">So gelingt der größte Splash</p>
+                <br/>
+                <p>
+                    <strong>
+                        Raunen am Beckenrand, eine gewaltige Fontäne: Eine wissenschaftliche Untersuchung zeigt, mit
+                        welcher Technik der Sprung ins Wasser den größten Spritz-Effekt hat. Mit dabei: ein extra
+                        gebauter Roboter.
+                    </strong>
+                </p>
+                <br/>
+                <p>
+                    Eigentlich ist Pankaj Rohilla ein seriöser Forscher an der Technischen Universität in Georgia in den
+                    USA. Sein Fachgebiet: Strömungsdynamiken von Wasseroberflächen. Aber manchmal geht es auch um
+                    “Arschbomben” - also darum, wie man mit dem Allerwertesten voraus ins Wasser springt.
+                </p>
+                <br/>
+                <p>
+                    "Wir sind dabei unserer Neugierde gefolgt“, sagt Rohilla. "Wir wollten wissen, wie man den
+                    mächtigsten Spritzer hinbekommt, wenn man ins Wasser springt. Also haben wir das erforscht.“
+                </p>
+                <br/>
+                <h2>Ziel beim Manu Jumping: Ein möglichst großer Splash</h2>
+                <p style="padding: 1rem 0">
+                    Die Idee kam dem Forschungsteam durch Videos auf Social Media: In Neuseeland ist das sogenannte Manu
+                    Jumping Teil der Maori-Kultur.
+                </p>
+                <br/>
+                <p>
+                    Ein Ziel dabei: ins Wasser springen und dabei den größten "Splash“, die beeindruckendste Fontäne
+                    auszulösen. Auffällig dabei für die Forschenden: Viele der Springerinnen und Springer aus Neuseeland
+                    nutzen beim Manu Jumping eine ganz bestimmte Technik: Sie strecken die Beine, ziehen die Füße hoch,
+                    bilden ein V und kommen so mit dem Po auf.
+                </p>
+                <br/>
+                <p>
+                    Ein Ziel dabei: ins Wasser springen und dabei den größten "Splash“, die beeindruckendste Fontäne
+                    auszulösen. Auffällig dabei für die Forschenden: Viele der Springerinnen und Springer aus Neuseeland
+                    nutzen beim Manu Jumping eine ganz bestimmte Technik: Sie strecken die Beine, ziehen die Füße hoch,
+                    bilden ein V und kommen so mit dem Po auf.
+                </p>
+                <br/>
+                <h2>Wer viel Wasser verdrängt, hat eine größere Fontäne</h2>
+                <p style="padding: 1rem 0">
+                    Klar ist: Wie groß so ein Platscher wird, hängt von verschiedenen Faktoren ab, sagt Ulrich Fehr. Er
+                    ist Dozent am Zentrum für Sportwissenschaften in Bayreuth.
+                </p>
+                <br/>
+                <p>
+                    Aus welcher Höhe er oder sie abspringt und mit welcher Geschwindigkeit man daher ins Wasser
+                    eintaucht und vor allem in welcher Haltung man eintaucht - das seien alles wichtige Faktoren. "Das
+                    Gewicht hat unseren Untersuchungen nach erstaunlicherweise kaum einen Einfluss auf die Höhe der
+                    Fontäne - viel entscheidender ist die Eintauchtechnik.“
+                </p>
+                <br/>
+                <h2>Die perfekte Technik: 45-Grad-Winkel und Ausstrecken</h2>
+                <p style="padding: 1rem 0">
+                    Das klappt mit der V-Technik des Manu Jumpings ziemlich gut. Der perfekte Winkel beim Aufprall ist
+                    dabei 45 Grad, das konnte das US-Forschungsteam der Technischen Universität Georgia mit Objekten aus
+                    dem 3D-Drucker zeigen. Viele der neuseeländischen Sportler erreichten einen solchen optimalen
+                    Winkel, zeigte eine Analyse von Online-Videos. Aber die Aufnahmen zeigten auch: Die Sprungtechnik
+                    endet nicht beim Aufprall. Sobald die Sportlerinnen und Sportler unter Wasser sind, vergrößern sie
+                    die Lufthöhle durch gezielte Bewegungen, um noch mehr Wasser zu verdrängen.
+                </p>
+                <br/>
+                <p>
+                    “Sie öffnen ihren Körper direkt nach dem Eintreten ins Wasser: Die Springer werfen den Rücken nach
+                    hinten und kicken mit den Beinen nach oben“, analysiert Rohilla. Doch diese Unterwassermanöver
+                    konnten nicht mit einem Objekt aus dem 3D-Drucker untersucht werden. "Wir brauchten etwas, was sich
+                    kontrolliert öffnen kann.“
+                </p>
+                <nav aria-label="Teilen über Social-Media-Links und E-Mail">
+                    <ul class="socialbuttons">
+                        <li>
+                            <a
+                                    aria-label="Facebook"
+                                    href="http://www.facebook.de"
+                                    onclick='window.open("https:\/\/www.facebook.com\/sharer.php?u=https:\/\/www.tagesschau.de\/wirtschaft\/arbeitsmarkt\/mindestlohn-anstieg-100.html?at_medium=tagesschau%26at_campaign=Facebook%26at_content=SiteSharing%26t=Mindestlohn%20soll%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%26desc="); return false;'
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Facebook</title>
+                        <path
+                                d="M24 0C10.75 0 0 10.75 0 24s10.75 24 24 24 24-10.75 24-24S37.25 0 24 0Zm7 15.39h-2.2c-2.19 0-2.86 1.33-2.86 2.69v3.23h4.86l-.77 4.97h-4.09v10.56h-5.48V26.28H16v-4.97h4.46v-3.79c0-4.3 2.61-6.68 6.62-6.68 1.91 0 3.92.34 3.92.34v4.22-.01Z"
+                                fill="#1C76ED"
+                        ></path>
+                        <path
+                                d="M20.46 17.52v3.79H16v4.97h4.46v10.56h5.48V26.28h4.09l.77-4.97h-4.86v-3.23c0-1.35.67-2.69 2.86-2.69H31v-4.22s-2.01-.34-3.92-.34c-4.01 0-6.62 2.38-6.62 6.68v.01Z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    aria-label="WhatsApp"
+                                    href="http://www.whatsapp.com"
+                                    onclick='window.open("https:\/\/api.whatsapp.com\/send?text=https:\/\/www.tagesschau.de\/wirtschaft\/arbeitsmarkt\/mindestlohn-anstieg-100.html?at_medium=tagesschau%26at_campaign=WhatsApp%26at_content=SiteSharing"); return false'
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Whatsapp</title>
+                        <path
+                                d="M24 13.59c-5.73 0-10.41 4.67-10.41 10.41 0 1.82.49 3.63 1.41 5.22l.55.95-.28 1.05-.58 2.09 2.09-.58 1.05-.28.95.55c1.59.93 3.39 1.41 5.22 1.41 5.73 0 10.41-4.67 10.41-10.41S29.74 13.59 24 13.59Zm6.75 14.86c-.29.74-1.66 1.42-2.33 1.52-1.46.19-4.14-.81-4.12-.78-3.46-1.39-5.71-4.61-5.89-4.82-.18-.21-1.41-1.73-1.41-3.31s.89-2.35 1.2-2.67c.31-.32.69-.4.92-.4h.66c.21.02.49-.07.77.55.29.64.98 2.2 1.07 2.37.08.16.15.35.03.56-.66 1.22-1.37 1.18-1.01 1.74 1.34 2.13 2.66 2.86 4.69 3.8.33.16.54.14.74-.08.21-.22.87-.94 1.1-1.26.23-.33.46-.27.77-.16.32.11 2.02.87 2.36 1.03.34.15.57.23.66.38.08.14.08.77-.2 1.52l-.01.01Z"
+                                fill="#00D856"
+                        ></path>
+                        <path
+                                d="M41.8 7.9C37.41 3.05 31.06 0 24 0 10.75 0 0 10.75 0 24c0 6.06 2.25 11.6 5.96 15.82C10.36 44.83 16.81 48 24 48c13.25 0 24-10.75 24-24 0-6.2-2.35-11.84-6.2-16.1ZM24 37c-2.38 0-4.6-.64-6.52-1.77L11 37l1.77-6.48A12.986 12.986 0 0 1 11 24c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13Z"
+                                fill="#00D856"
+                        ></path>
+                        <path
+                                d="M24 11c-7.18 0-13 5.82-13 13 0 2.38.65 4.6 1.77 6.52L11 37l6.48-1.77C19.4 36.35 21.62 37 24 37c7.18 0 13-5.82 13-13s-5.82-13-13-13Zm0 23.41c-1.82 0-3.63-.49-5.22-1.41l-.95-.55-1.05.28-2.09.58.58-2.09.28-1.05-.55-.95c-.93-1.59-1.41-3.39-1.41-5.22 0-5.73 4.67-10.41 10.41-10.41S34.41 18.26 34.41 24 29.74 34.41 24 34.41Z"
+                                fill="#fff"
+                        ></path>
+                        <path
+                                d="M30.29 26.56c-.34-.16-2.04-.93-2.36-1.03-.31-.11-.54-.16-.77.16-.23.32-.89 1.03-1.1 1.26-.2.21-.41.24-.74.08-2.03-.94-3.35-1.67-4.69-3.8-.36-.56.35-.52 1.01-1.74.11-.21.05-.4-.03-.56-.08-.16-.77-1.73-1.07-2.37-.28-.62-.56-.53-.77-.55h-.66c-.23 0-.61.08-.92.4-.31.32-1.2 1.09-1.2 2.67 0 1.58 1.23 3.09 1.41 3.31.18.21 2.43 3.43 5.89 4.82-.01-.03 2.67.98 4.12.78.67-.1 2.04-.77 2.33-1.52.28-.74.28-1.38.2-1.52-.08-.15-.31-.22-.66-.38l.01-.01Z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    aria-label="Mail"
+                                    href="mailto:?subject=Link-Tipp:%20Mindestlohn%20soll%20in%20zwei%20Schritten%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%20(tagesschau.de)&amp;body=Link-Tipp:%20Mindestlohn%20soll%20in%20zwei%20Schritten%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%20(tagesschau.de)%0Ahttps://www.tagesschau.de/wirtschaft/arbeitsmarkt/mindestlohn-anstieg-100.html?at_medium%3Dtagesschau%26at_campaign%3DMail%26at_content%3DSiteSharing%0A%0A"
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Mail</title>
+                        <path
+                                d="M43.9 7.2H2.3l20.1 15.9c.9.7 2.2.7 3-.1L43.9 7.2zM13.7 22.3 0 11.5v25.8c0-.1 13.7-15 13.7-15zM48 10 34 22l14 15.2V10zM30.4 25.1l-4.8 4.1c-.9.7-2.2.8-3 .1l-5.1-4L3.2 40.8h41.5L30.4 25.1z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </article>
+    </section>
+</template>
+
+<template id="grillen-page-template">
+    <section class="wrapper bg-signature">
+        <article>
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLkm68/16x9-640/schaschlik-grill-100.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLk4K0/16x9-768/schaschlik-grill-100.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLp4nc/20x9-960/schaschlik-grill-100.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLpihI/20x9-1280/schaschlik-grill-100.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLkm68/16x9-640/schaschlik-grill-100.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLk4K0/16x9-768/schaschlik-grill-100.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLp4nc/20x9-960/schaschlik-grill-100.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLpihI/20x9-1280/schaschlik-grill-100.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/0ba12a34-1181-40e1-aa79-b4b8b4af2704/AAABl_7hI00/AAABkZLpihI/20x9-1280/schaschlik-grill-100.jpg"
+                     alt="Ein Schaschlik-Spieß liegt auf einem Gasgrill."
+                     title="Ein Schaschlik-Spieß liegt auf einem Gasgrill. | picture alliance / dpa Themendie">
+            </picture>
+            <div style="width: 66%; margin: 1rem auto">
+                <h1 style="margin-top: 16px">
+                    <span class="rooftitle">LErnährung</span>
+                    <span>So geht gesundes Grillen</span>
+                </h1>
+                <p class="metatextline">Stand: 11.07.2025 15:10 Uhr</p>
+                <br/>
+                <p>
+                    <strong>
+                        Grillen hat in Sachen Gesundheit keinen guten Ruf - gegrilltes Fleisch etwa kann krebserregende
+                        Stoffe enthalten. Doch es gibt Tipps, mit denen sich das Risiko eindämmen lässt.
+                    </strong>
+                </p>
+                <br/>
+                <p>
+                    Die Weltgesundheitsorganisation warnt vor zu viel Fleisch, außerdem können beim Grillen
+                    krebserregende Stoffe entstehen. Doch mit etwas Know-how gelingt Grillgenuss auch ohne Reue, sagt
+                    Ernährungsmediziner Matthias Riedl im NDR-Gesundheitsmagazin "Visite“.
+                </p>
+                <br/>
+                <p>
+                    "Wer gesünder grillen möchte, der muss einige Details beachten. Wie zum Beispiel: Was kommt auf den
+                    Grill, und wie grille ich? Dann ist gesünderes Grillen durchaus möglich“, so Riedl.
+                </p>
+                <br/>
+                <h2>Kokeln und Tropfen: Schlecht für die Gesundheit</h2>
+                <p style="padding: 1rem 0">
+                    Wenn Grillgut anbrennt und schwarz wird, verbrennen die im Fleisch enthaltenen Eiweiße zu
+                    heterozyklischen aromatischen Aminen (HAA). Diese sind krebserregend. Deswegen gilt: verkohlte
+                    Stellen nie mitessen, sondern abschneiden.
+                </p>
+                <br/>
+                <p>
+                    Wenn Fett oder Marinade vom Fleisch auf die heiße Kohle tropft, verbrennt es in einer blauen Flamme
+                    zu polyzyklischen aromatischen Kohlenwasserstoffen (PAK). Diese gelangen über den Rauch sofort
+                    wieder an das Fleisch und setzen sich daran fest. Doch auch PAK sind krebserregend. Deswegen ist es
+                    wichtig zu vermeiden, dass etwas auf die heiße Kohle tropft, so Ernährungsmediziner Riedl.
+                </p>
+                <br/>
+                <p>
+                    "Gesünderes Grillen ist eine Gratwanderung. Die erwünschten Röstaromen entstehen ja beim Erhitzen.
+                    Wenn ich es aber mit der Hitze übertreibe und sie zu lang anwende, dann besteht die Gefahr, dass
+                    sich zunehmend krebserregende Substanzen wie PAK und HAA entwickeln. Deshalb möglichst kurz heiß
+                    angrillen und dann die Hitze reduzieren.“
+                </p>
+                <br/>
+                <h2>Gut getupft ist gesund gegrillt</h2>
+                <p style="padding: 1rem 0">
+                    Um zu verhindern, dass Fett oder Marinade vom Fleisch tropft und zu PAK wird, empfiehlt Grillexperte
+                    Alberts, das Fleisch vorher abzutupfen. Die Marinade sollte in der Regel ohnehin ins Fleisch
+                    eingezogen sein.
+                </p>
+                <br/>
+                <p>
+                    Eine andere Variante ist, das Fleisch in einer gußeisernen Pfanne auf den Grill zu legen. Durch die
+                    sehr hohen Temperaturen entstehe immer noch der Grilleffekt, das unterscheide diese Methode vom
+                    Braten in der Pfanne.
+                </p>
+                <br/>
+                <h2>Vorsicht vor Grillmatten oder Aluschalen</h2>
+                <p style="padding: 1rem 0">
+                    Von Grillschalen aus Aluminium rät der Toxikologe Thomas Tietz vom Bundesinstitut für
+                    Risikobewertung ab. Alu reagiert mit salzigen oder säurehaltigen Lebensmitteln (etwa bei
+                    Zitrusmarinade) und wird dann mitgegessen. Ab einer bestimmten Menge kann das für Knochen oder das
+                    Nervensystem schädlich sein.
+                </p>
+                <br/>
+                <p>
+                    Auch von sogenannten Grillmatten rät Tietz ab. Diese sind oft mit Teflon beschichtet. Jedoch wird
+                    ein Kohlegrill viel zu heiß für das Material, so Tietz. "Teflon ist ein Kunststoff, der sich ab
+                    einer bestimmten Temperatur zersetzt. Und das ist ab etwa 300 Grad Celsius der Fall. Das kann man,
+                    wenn man so eine Matte direkt auf das Feuer legt, durchaus erreichen.“
+                </p>
+                <br/>
+                <p>
+                    Wer den komplizierten Umgang und die möglichen gesundheitlichen Gefahren vermeiden möchte, kann
+                    einen Gas- oder Elektrogrill nutzen. Diese sind meist so gebaut, dass Fett nicht verbrennen kann.
+                    Zudem lässt sich hier die Temperatur leichter regulieren.
+                </p>
+                <nav aria-label="Teilen über Social-Media-Links und E-Mail">
+                    <ul class="socialbuttons">
+                        <li>
+                            <a
+                                    aria-label="Facebook"
+                                    href="http://www.facebook.de"
+                                    onclick='window.open("https:\/\/www.facebook.com\/sharer.php?u=https:\/\/www.tagesschau.de\/wirtschaft\/arbeitsmarkt\/mindestlohn-anstieg-100.html?at_medium=tagesschau%26at_campaign=Facebook%26at_content=SiteSharing%26t=Mindestlohn%20soll%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%26desc="); return false;'
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Facebook</title>
+                        <path
+                                d="M24 0C10.75 0 0 10.75 0 24s10.75 24 24 24 24-10.75 24-24S37.25 0 24 0Zm7 15.39h-2.2c-2.19 0-2.86 1.33-2.86 2.69v3.23h4.86l-.77 4.97h-4.09v10.56h-5.48V26.28H16v-4.97h4.46v-3.79c0-4.3 2.61-6.68 6.62-6.68 1.91 0 3.92.34 3.92.34v4.22-.01Z"
+                                fill="#1C76ED"
+                        ></path>
+                        <path
+                                d="M20.46 17.52v3.79H16v4.97h4.46v10.56h5.48V26.28h4.09l.77-4.97h-4.86v-3.23c0-1.35.67-2.69 2.86-2.69H31v-4.22s-2.01-.34-3.92-.34c-4.01 0-6.62 2.38-6.62 6.68v.01Z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    aria-label="WhatsApp"
+                                    href="http://www.whatsapp.com"
+                                    onclick='window.open("https:\/\/api.whatsapp.com\/send?text=https:\/\/www.tagesschau.de\/wirtschaft\/arbeitsmarkt\/mindestlohn-anstieg-100.html?at_medium=tagesschau%26at_campaign=WhatsApp%26at_content=SiteSharing"); return false'
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Whatsapp</title>
+                        <path
+                                d="M24 13.59c-5.73 0-10.41 4.67-10.41 10.41 0 1.82.49 3.63 1.41 5.22l.55.95-.28 1.05-.58 2.09 2.09-.58 1.05-.28.95.55c1.59.93 3.39 1.41 5.22 1.41 5.73 0 10.41-4.67 10.41-10.41S29.74 13.59 24 13.59Zm6.75 14.86c-.29.74-1.66 1.42-2.33 1.52-1.46.19-4.14-.81-4.12-.78-3.46-1.39-5.71-4.61-5.89-4.82-.18-.21-1.41-1.73-1.41-3.31s.89-2.35 1.2-2.67c.31-.32.69-.4.92-.4h.66c.21.02.49-.07.77.55.29.64.98 2.2 1.07 2.37.08.16.15.35.03.56-.66 1.22-1.37 1.18-1.01 1.74 1.34 2.13 2.66 2.86 4.69 3.8.33.16.54.14.74-.08.21-.22.87-.94 1.1-1.26.23-.33.46-.27.77-.16.32.11 2.02.87 2.36 1.03.34.15.57.23.66.38.08.14.08.77-.2 1.52l-.01.01Z"
+                                fill="#00D856"
+                        ></path>
+                        <path
+                                d="M41.8 7.9C37.41 3.05 31.06 0 24 0 10.75 0 0 10.75 0 24c0 6.06 2.25 11.6 5.96 15.82C10.36 44.83 16.81 48 24 48c13.25 0 24-10.75 24-24 0-6.2-2.35-11.84-6.2-16.1ZM24 37c-2.38 0-4.6-.64-6.52-1.77L11 37l1.77-6.48A12.986 12.986 0 0 1 11 24c0-7.18 5.82-13 13-13s13 5.82 13 13-5.82 13-13 13Z"
+                                fill="#00D856"
+                        ></path>
+                        <path
+                                d="M24 11c-7.18 0-13 5.82-13 13 0 2.38.65 4.6 1.77 6.52L11 37l6.48-1.77C19.4 36.35 21.62 37 24 37c7.18 0 13-5.82 13-13s-5.82-13-13-13Zm0 23.41c-1.82 0-3.63-.49-5.22-1.41l-.95-.55-1.05.28-2.09.58.58-2.09.28-1.05-.55-.95c-.93-1.59-1.41-3.39-1.41-5.22 0-5.73 4.67-10.41 10.41-10.41S34.41 18.26 34.41 24 29.74 34.41 24 34.41Z"
+                                fill="#fff"
+                        ></path>
+                        <path
+                                d="M30.29 26.56c-.34-.16-2.04-.93-2.36-1.03-.31-.11-.54-.16-.77.16-.23.32-.89 1.03-1.1 1.26-.2.21-.41.24-.74.08-2.03-.94-3.35-1.67-4.69-3.8-.36-.56.35-.52 1.01-1.74.11-.21.05-.4-.03-.56-.08-.16-.77-1.73-1.07-2.37-.28-.62-.56-.53-.77-.55h-.66c-.23 0-.61.08-.92.4-.31.32-1.2 1.09-1.2 2.67 0 1.58 1.23 3.09 1.41 3.31.18.21 2.43 3.43 5.89 4.82-.01-.03 2.67.98 4.12.78.67-.1 2.04-.77 2.33-1.52.28-.74.28-1.38.2-1.52-.08-.15-.31-.22-.66-.38l.01-.01Z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a
+                                    aria-label="Mail"
+                                    href="mailto:?subject=Link-Tipp:%20Mindestlohn%20soll%20in%20zwei%20Schritten%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%20(tagesschau.de)&amp;body=Link-Tipp:%20Mindestlohn%20soll%20in%20zwei%20Schritten%20auf%2014,60%20Euro%20pro%20Stunde%20steigen%20(tagesschau.de)%0Ahttps://www.tagesschau.de/wirtschaft/arbeitsmarkt/mindestlohn-anstieg-100.html?at_medium%3Dtagesschau%26at_campaign%3DMail%26at_content%3DSiteSharing%0A%0A"
+                            >
+                    <span class="socialbuttons-icon"
+                    ><svg
+                            role="img"
+                            viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <title>Mail</title>
+                        <path
+                                d="M43.9 7.2H2.3l20.1 15.9c.9.7 2.2.7 3-.1L43.9 7.2zM13.7 22.3 0 11.5v25.8c0-.1 13.7-15 13.7-15zM48 10 34 22l14 15.2V10zM30.4 25.1l-4.8 4.1c-.9.7-2.2.8-3 .1l-5.1-4L3.2 40.8h41.5L30.4 25.1z"
+                                fill="#fff"
+                        ></path>
+                      </svg>
+                    </span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </article>
+    </section>
+</template>
+
+<template id="menschheit-page-template">
+    <section class="wrapper bg-signature">
+        <article>
+            <picture>
+                <source type="image/webp" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLkm68/16x9-640/menschen-indien-100.webp">
+                <source type="image/webp" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLk4K0/16x9-768/menschen-indien-100.webp">
+                <source type="image/webp" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLp4nc/20x9-960/menschen-indien-100.webp">
+                <source type="image/webp" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLpihI/20x9-1280/menschen-indien-100.webp">
+                <source type="image/jpeg" media="(max-width: 440px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLkm68/16x9-640/menschen-indien-100.jpg">
+                <source type="image/jpeg" media="(max-width: 767px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLk4K0/16x9-768/menschen-indien-100.jpg">
+                <source type="image/jpeg" media="(max-width: 900px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLp4nc/20x9-960/menschen-indien-100.jpg">
+                <source type="image/jpeg" media="(min-width: 901px)"
+                        srcset="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLpihI/20x9-1280/menschen-indien-100.jpg">
+                <img loading="lazy" decoding="async"
+                     src="https://images.tagesschau.de/image/3aa19e61-e0d9-4eed-91d6-2af0c973f030/AAABl_khqw8/AAABkZLpihI/20x9-1280/menschen-indien-100.jpg"
+                     alt="Menschen drängen sich auf einem Markt in Mumbai."
+                     title="Menschen drängen sich auf einem Markt in Mumbai. | dpa">
+            </picture>
+            <div style="width: 66%; margin: 1rem auto">
+                <h1 style="margin-top: 16px">
+                    <span class="rooftitle">Weltbevölkerungstag</span>
+                    <span>Die Menschheit wächst langsamer</span>
+                </h1>
+                <p class="metatextline">Stand: 11.07.2025 13:19 Uhr</p>
+                <br/>
+                <p>
+                    <strong>
+                        In einigen Regionen nimmt die Bevölkerung schnell zu, anderswo schrumpft sie. Forschende sagen,
+                        die Geburtenrate wäre ausgeglichener, wenn alle Menschen frei entscheiden könnten, wie viele
+                        Kinder sie haben wollen.
+                    </strong>
+                </p>
+                <br/>
+                <p>
+                    Ihre fünf Kinder bedeuten Sicherheit, so erzählt es die ägyptische Bäuerin Umm Ahmed. Wenn ein
+                    Elternteil krank werde, müssen Söhne oder Töchter bei der Feldarbeit einspringen oder die Tiere
+                    füttern. Aus solchen Zwängen heraus bekommen Familien in den afrikanischen Subsahara-Staaten
+                    durchschnittlich vier Kinder - auch wenn die Frauen eigentlich weniger gebären möchten.
+                    Demografie-Experten prognostizieren zwar, dass die Geburtenrate dort bis 2050 auf unter drei Kinder
+                    pro Frau sinkt. Trotzdem rechnen sie noch bis zum Ende des Jahrhunderts mit einem rasanten
+                    Bevölkerungswachstum - von heute 1,2 Milliarden auf dann 3,3 Milliarden Menschen in der Region.
+                </p>
+                <br/>
+                <p>
+                    "Das ist die Trägheit der Demografie", erklärt Frank Swiaczny vom Bundesinstitut für
+                    Bevölkerungsforschung. "Bei einem Durchschnittsalter von unter 30 in diesen Ländern kommen in den
+                    nächsten Jahren noch viele junge Mädchen ins gebärfähige Alter. Dann beschleunigt sich das
+                    demografische Wachstum."
+                </p>
+                <br/>
+                <h2>Wenige Kinder in Europa</h2>
+                <p style="padding: 1rem 0">
+                    Viele Frauen oder Paare in Europa würden gerne mehr Kinder bekommen - halten sich aber wegen
+                    fehlender Möglichkeiten zu Kinderbetreuung, Unvereinbarkeit von Familie und Beruf oder auch wegen
+                    geringer Einkommen zurück. Laut Umfragen schreckt manche auch die Angst vor Klimawandel und Krieg
+                    von der Familiengründung ab.
+                </p>
+                <br/>
+                <p>
+                    Viele Frauen oder Paare in Europa würden gerne mehr Kinder bekommen - halten sich aber wegen
+                    fehlender Möglichkeiten zu Kinderbetreuung, Unvereinbarkeit von Familie und Beruf oder auch wegen
+                    geringer Einkommen zurück. Laut Umfragen schreckt manche auch die Angst vor Klimawandel und Krieg
+                    von der Familiengründung ab.
+                </p>
+                <br/>
+                <h2>Staat hat wenig Einfluss</h2>
+                <p style="padding: 1rem 0">
+                    Staatliche Programme, um die Geburtenrate zu beeinflussen, verfangen meist schlecht oder schlagen
+                    sogar ins Gegenteil um. In China zum Beispiel führt die lange von der Regierung propagierte, dann
+                    2015 offiziell beendete "Ein-Kind-Politik" bis heute zu extrem niedrigen Geburtenraten.
+                    Demografieexperten rechnen damit, dass sich die Zahl der Chinesinnen und Chinesen von heute 1,4
+                    Milliarden bis 2100 auf 600 Millionen halbieren wird.
+                </p>
+                <br/>
+                <p>
+                    Mittlerweile hat Indien China als bevölkerungsreichstes Land der Erde abgelöst - aber auch dort ist
+                    ein Ende des Wachstums absehbar. Statt staatlicher Direktiven müssten Regierungen ein
+                    familienfreundliches Klima schaffen, dass Frauen und Männern die Möglichkeit zu einem
+                    selbstbestimmten Leben mit Kindern gebe, resümiert Bähr: "Dann ist die Geburtenrate auch mehr oder
+                    weniger ausgeglichen - wie zum Beispiel in einigen skandinavischen Ländern." Dort bekommt jede Frau
+                    im Schnitt zwei Kinder, was die Bevölkerung stabil hält.
+                </p>
+                <br/>
+                <p>
+                    Vor allem wegen der Entwicklung in China und Indien rechnen die Vereinten Nationen mittlerweile
+                    damit, dass die Weltbevölkerung von heute 8,3 Milliarden Menschen auf maximal 10,3 Milliarden in den
+                    2080er-Jahren wachsen wird. Danach soll die Zahl sinken. Wobei für die Erde und ihre Ressourcen auch
+                    auf dem Höhepunkt nicht die zehn Milliarden Menschen zum Problem werden, sondern der massenhafte
+                    Konsum.
                 </p>
                 <br/>
                 <nav aria-label="Teilen über Social-Media-Links und E-Mail">
