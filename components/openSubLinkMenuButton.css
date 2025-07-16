@@ -1,7 +1,6 @@
 button {
   background-color: unset;
   border: unset;
-  color: white;
   padding: 10px;
   font: inherit;
   letter-spacing: inherit;
@@ -25,4 +24,8 @@ button:hover {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.inaccessible {
+  color: #868698;
 }

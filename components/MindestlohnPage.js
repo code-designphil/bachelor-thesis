@@ -14,7 +14,11 @@ export default class MindestlohnPage extends HTMLElement {
       const mindestlohnPageStyles = await fetch(
         "/components/MindestlohnPage.css"
       );
-      const globalStyles = await fetch("/styles.css");
+      const globalStyles = await fetch(
+        `/${
+          localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+        }styles.css`
+      );
       styles.textContent = await mindestlohnPageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
     }

@@ -13,7 +13,11 @@ export default class Toggle extends HTMLElement {
 
     const styles = document.createElement("style");
     const thisPageStyles = await fetch("/components/Toggle.css");
-    const globalStyles = await fetch("/styles.css");
+    const globalStyles = await fetch(
+      `/${
+        localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+      }styles.css`
+    );
     styles.textContent = await thisPageStyles.text();
     styles.textContent = styles.textContent.concat(await globalStyles.text());
 

@@ -12,7 +12,11 @@ export default class DomesticPage extends HTMLElement {
 
     async function loadCSS() {
       const pageStyles = await fetch("/components/DomesticPage.css");
-      const globalStyles = await fetch("/styles.css");
+      const globalStyles = await fetch(
+        `/${
+          localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+        }styles.css`
+      );
       styles.textContent = await pageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
     }

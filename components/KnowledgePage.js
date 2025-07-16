@@ -1,42 +1,46 @@
 export default class KnowledgePage extends HTMLElement {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.root = this.attachShadow({mode: "open"});
+    this.root = this.attachShadow({ mode: "open" });
 
-        const template = document.getElementById("knowledge-page-template");
-        const content = template.content.cloneNode(true);
-        const styles = document.createElement("style");
-        this.root.appendChild(content);
-        this.root.appendChild(styles);
+    const template = document.getElementById("knowledge-page-template");
+    const content = template.content.cloneNode(true);
+    const styles = document.createElement("style");
+    this.root.appendChild(content);
+    this.root.appendChild(styles);
 
-        async function loadCSS() {
-            const globalStyles = await fetch("/styles.css");
-            styles.textContent = styles.textContent.concat(await globalStyles.text());
-        }
-
-        loadCSS();
+    async function loadCSS() {
+      const globalStyles = await fetch(
+        `/${
+          localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+        }styles.css`
+      );
+      styles.textContent = styles.textContent.concat(await globalStyles.text());
     }
 
-    connectedCallback() {
-        this.render();
-    }
+    loadCSS();
+  }
 
-    disconnectedCallback() {
-        const breadcrumbs = document.getElementById("sub-navigation");
-        breadcrumbs.removeChild(breadcrumbs.lastChild);
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        const breadcrumbs = document.getElementById("sub-navigation");
-        const breadcrumbWrapper = document.createElement("li");
-        const breadcrumb = document.createElement("a");
-        breadcrumb.href = "/wissen";
-        breadcrumb.classList.add("bredcrumb-tag");
-        breadcrumb.innerHTML = "Wissen";
-        breadcrumbWrapper.append(breadcrumb);
-        breadcrumbs.appendChild(breadcrumbWrapper);
-    }
+  disconnectedCallback() {
+    const breadcrumbs = document.getElementById("sub-navigation");
+    breadcrumbs.removeChild(breadcrumbs.lastChild);
+  }
+
+  render() {
+    const breadcrumbs = document.getElementById("sub-navigation");
+    const breadcrumbWrapper = document.createElement("li");
+    const breadcrumb = document.createElement("a");
+    breadcrumb.href = "/wissen";
+    breadcrumb.classList.add("bredcrumb-tag");
+    breadcrumb.innerHTML = "Wissen";
+    breadcrumbWrapper.append(breadcrumb);
+    breadcrumbs.appendChild(breadcrumbWrapper);
+  }
 }
 
 customElements.define("knowledge-page", KnowledgePage);

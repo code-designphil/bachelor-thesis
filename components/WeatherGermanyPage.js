@@ -14,7 +14,11 @@ export default class WeatherGermanyPage extends HTMLElement {
       const weatherGermanyPageStyles = await fetch(
         "/components/WeatherGermanyPage.css"
       );
-      const globalStyles = await fetch("/styles.css");
+      const globalStyles = await fetch(
+        `/${
+          localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+        }styles.css`
+      );
       styles.textContent = await weatherGermanyPageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
     }

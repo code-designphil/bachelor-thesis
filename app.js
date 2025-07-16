@@ -27,6 +27,7 @@ import MenschheitPage from "./components/MenschheitPage.js";
 import DomesticPage from "./components/DomesticPage.js";
 import ZivilcouragePage from "./components/ZivilcouragePage.js";
 import MerzPage from "./components/MerzPage.js";
+import VideoArticleSection from "./components/VideoArticleSection.js";
 
 window.app = {};
 app.router = Router;
@@ -34,5 +35,5 @@ app.router = Router;
 // It's better to wait for this event because the elements might not be loaded yet even though
 // app.js has the defer attribute
 window.addEventListener("DOMContentLoaded", function () {
-    app.router.init();
+  app.router.init();
 });

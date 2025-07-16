@@ -1,25 +1,25 @@
 export default class BurgerMenu extends HTMLElement {
-    #root;
+  #root;
 
-    constructor() {
-        super();
-        this.#root = this.attachShadow({mode: "open"});
-    }
+  constructor() {
+    super();
+    this.#root = this.attachShadow({ mode: "open" });
+  }
 
-    closeSidenavigation(
-        sideNavigation,
-        sideNavigationPlaceholder,
-        navigationWrapper,
-        button
-    ) {
-        sideNavigation.style.display = "none";
-        sideNavigationPlaceholder.style.display = "block";
-        navigationWrapper.classList.toggle("side-navigation-wrapper-moved");
-        button.ariaExpanded = "false";
-    }
+  closeSidenavigation(
+    sideNavigation,
+    sideNavigationPlaceholder,
+    navigationWrapper,
+    button
+  ) {
+    sideNavigation.style.display = "none";
+    sideNavigationPlaceholder.style.display = "block";
+    navigationWrapper.classList.toggle("side-navigation-wrapper-moved");
+    button.ariaExpanded = "false";
+  }
 
-    getButtonInnerHtml(isExpanded) {
-        return `
+  getButtonInnerHtml(isExpanded) {
+    return `
         <img
             src="resources/svg/${!isExpanded ? "cross" : "burger"}.svg"
             width="${!isExpanded ? "30" : "36"}"
@@ -27,65 +27,65 @@ export default class BurgerMenu extends HTMLElement {
             aria-hidden="true"
         />
       `;
-    }
+  }
 
-    async connectedCallback() {
-        const styles = document.createElement("style");
-        const request = await fetch("/components/BurgerMenu.css");
-        styles.textContent = await request.text();
+  async connectedCallback() {
+    const styles = document.createElement("style");
+    const request = await fetch("/components/BurgerMenu.css");
+    styles.textContent = await request.text();
 
-        const button = document.createElement("button");
-        button.ariaLabel = "Open menu";
-        button.ariaExpanded = "false";
-        button.ariaHasPopup = "true";
+    const button = document.createElement("button");
+    button.ariaLabel = "Open menu";
+    button.ariaExpanded = "false";
+    button.ariaHasPopup = "true";
 
-        button.onclick = (event) => {
-            const button = event.currentTarget;
-            const sideNavigation = document.getElementById("side-navigation");
-            const sideNavigationPlaceholder = document.getElementById(
-                "side-navigation-placeholder"
-            );
-            const navigationWrapper = sideNavigation.shadowRoot.querySelector(
-                ".side-navigation-wrapper"
-            );
-            const isExpanded = button.ariaExpanded == "true";
+    button.onclick = (event) => {
+      const button = event.currentTarget;
+      const sideNavigation = document.getElementById("side-navigation");
+      const sideNavigationPlaceholder = document.getElementById(
+        "side-navigation-placeholder"
+      );
+      const navigationWrapper = sideNavigation.shadowRoot.querySelector(
+        ".side-navigation-wrapper"
+      );
+      const isExpanded = button.ariaExpanded == "true";
 
-            const BurgerMenu = this;
-            document.addEventListener("keydown", function handleESC(e) {
-                if (e.key === "Escape" && button.ariaExpanded == "true") {
-                    button.innerHTML = BurgerMenu.getButtonInnerHtml(true);
-                    BurgerMenu.closeSidenavigation(
-                        sideNavigation,
-                        sideNavigationPlaceholder,
-                        navigationWrapper,
-                        button
-                    );
-                    button.focus();
-                }
-            });
+      const BurgerMenu = this;
+      document.addEventListener("keydown", function handleESC(e) {
+        if (e.key === "Escape" && button.ariaExpanded == "true") {
+          button.innerHTML = BurgerMenu.getButtonInnerHtml(true);
+          BurgerMenu.closeSidenavigation(
+            sideNavigation,
+            sideNavigationPlaceholder,
+            navigationWrapper,
+            button
+          );
+          button.focus();
+        }
+      });
 
-            if (isExpanded) {
-                this.closeSidenavigation(
-                    sideNavigation,
-                    sideNavigationPlaceholder,
-                    navigationWrapper,
-                    button
-                );
-            } else {
-                sideNavigation.style.display = "block";
-                sideNavigationPlaceholder.style.display = "none";
-                setTimeout(
-                    () =>
-                        navigationWrapper.classList.toggle("side-navigation-wrapper-moved"),
-                    10
-                );
-                button.ariaExpanded = "true";
-            }
+      if (isExpanded) {
+        this.closeSidenavigation(
+          sideNavigation,
+          sideNavigationPlaceholder,
+          navigationWrapper,
+          button
+        );
+      } else {
+        sideNavigation.style.display = "block";
+        sideNavigationPlaceholder.style.display = "none";
+        setTimeout(
+          () =>
+            navigationWrapper.classList.toggle("side-navigation-wrapper-moved"),
+          10
+        );
+        button.ariaExpanded = "true";
+      }
 
-            button.innerHTML = this.getButtonInnerHtml(isExpanded);
-        };
+      button.innerHTML = this.getButtonInnerHtml(isExpanded);
+    };
 
-        button.innerHTML = `
+    button.innerHTML = `
         <img
             src="/resources/svg/burger.svg"
             width="36"
@@ -94,10 +94,10 @@ export default class BurgerMenu extends HTMLElement {
         />
     `;
 
-        this.#root.innerHTML = "";
-        this.#root.appendChild(styles);
-        this.#root.appendChild(button);
-    }
+    this.#root.innerHTML = "";
+    this.#root.appendChild(styles);
+    this.#root.appendChild(button);
+  }
 }
 
 customElements.define("burger-menu-button", BurgerMenu);

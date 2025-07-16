@@ -12,7 +12,11 @@ export default class EconomyPage extends HTMLElement {
 
     async function loadCSS() {
       const economyPageStyles = await fetch("/components/EconomyPage.css");
-      const globalStyles = await fetch("/styles.css");
+      const globalStyles = await fetch(
+        `/${
+          localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+        }styles.css`
+      );
       styles.textContent = await economyPageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
     }

@@ -12,7 +12,11 @@ export default class ContactPage extends HTMLElement {
 
     async function loadCSS() {
       const contactPageStyles = await fetch("/components/ContactPage.css");
-      const globalStyles = await fetch("/styles.css");
+      const globalStyles = await fetch(
+        `/${
+          localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+        }styles.css`
+      );
       styles.textContent = await contactPageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
     }
