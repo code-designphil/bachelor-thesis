@@ -6,6 +6,10 @@
         box-sizing: border-box;
     }
 
+    *:focus {
+        outline: none !important;
+    }
+
     /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
     html {
         -moz-text-size-adjust: none;

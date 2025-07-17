@@ -11,14 +11,12 @@ export default class MerzPage extends HTMLElement {
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const pageStyles = await fetch("/components/MerzPage.css");
       const globalStyles = await fetch(
         `/${
           localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-        }styles.css`
+        }styles.css`,
       );
-      styles.textContent = await pageStyles.text();
-      styles.textContent = styles.textContent.concat(await globalStyles.text());
+      styles.textContent = await globalStyles.text();
     }
 
     loadCSS();

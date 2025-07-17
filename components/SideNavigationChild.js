@@ -17,11 +17,13 @@ export default class SideNavigationChild extends HTMLElement {
     const request = await fetch("/components/SideNavigationChild.css");
     styles.textContent = await request.text();
 
+    const isAccessible = localStorage.getItem("accessible") == "true";
+
     const container = document.createElement("li");
     container.classList.add(first ? "first" : null);
     container.innerHTML = `
       <div class="main-link-wrapper">
-        ${mainLink ? `<a href="${mainLink}">${title}</a>` : ""}
+        ${mainLink ? `<a href="${mainLink}" class="${isAccessible ? "" : "inaccessible"}">${title}</a>` : ""}
         <open-sub-link-menu-button
           title="${title}"
           root-element-id="${rootElementId}"

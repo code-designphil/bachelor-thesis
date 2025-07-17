@@ -42,13 +42,13 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
 
     const hiddenContent = this.getHiddenContent(subLinks, isSettings);
 
+    const isAccessible = localStorage.getItem("accessible") == "true";
+
     const styles = document.createElement("style");
     const request = await fetch("/components/openSubLinkMenuButton.css");
     styles.textContent = await request.text();
 
     const container = document.createElement("button");
-
-    const isAccessible = localStorage.getItem("accessible") == "true";
     if (!isAccessible) {
       container.classList.add("inaccessible");
     }
@@ -125,7 +125,7 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
                   title="${link.text}"
                   main-link="${link.href ?? `/${link.text.toLowerCase()}`}"
               >
-              </side-navigation-child>`
+              </side-navigation-child>`,
         )
         .join("")}
         `;

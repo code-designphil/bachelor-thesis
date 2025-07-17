@@ -9,12 +9,6 @@ export default class HomePage extends HTMLElement {
     const styles = document.createElement("style");
     this.root.appendChild(content);
     this.root.appendChild(styles);
-
-    async function loadCSS() {
-      const request = await fetch("/components/HomePage.css");
-      styles.textContent = await request.text();
-    }
-    loadCSS();
   }
 
   connectedCallback() {}

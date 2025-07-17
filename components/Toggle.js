@@ -16,15 +16,25 @@ export default class Toggle extends HTMLElement {
     const globalStyles = await fetch(
       `/${
         localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-      }styles.css`
+      }styles.css`,
     );
     styles.textContent = await thisPageStyles.text();
     styles.textContent = styles.textContent.concat(await globalStyles.text());
 
+    const isAccessible = localStorage.getItem("accessible") == "true";
+    if (isAccessible) {
+      styles.textContent = styles.textContent.concat(`
+        input:focus-visible + .slider {
+            outline: 2px solid #4c9aff;
+            outline-offset: 4px;
+        }
+      `);
+    }
+
     const container = document.createElement("div");
     container.innerHTML = `
         <label class="switch">
-          <input name="${text} anschalten" type="checkbox">
+          <input name="${text} anschalten" type="checkbox" class="${isAccessible ? "" : "inaccessible"}">
           <span class="slider"></span>
         </label>
         ${text}

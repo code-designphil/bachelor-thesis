@@ -10,7 +10,7 @@ export default class BurgerMenu extends HTMLElement {
     sideNavigation,
     sideNavigationPlaceholder,
     navigationWrapper,
-    button
+    button,
   ) {
     sideNavigation.style.display = "none";
     sideNavigationPlaceholder.style.display = "block";
@@ -31,7 +31,13 @@ export default class BurgerMenu extends HTMLElement {
 
   async connectedCallback() {
     const styles = document.createElement("style");
-    const request = await fetch("/components/BurgerMenu.css");
+    let request = "";
+    if (localStorage.getItem("accessible") == "true") {
+      request = await fetch("/components/BurgerMenu.css");
+    } else {
+      request = await fetch("/components/InaccessibleBurgerMenu.css");
+    }
+
     styles.textContent = await request.text();
 
     const button = document.createElement("button");
@@ -43,10 +49,10 @@ export default class BurgerMenu extends HTMLElement {
       const button = event.currentTarget;
       const sideNavigation = document.getElementById("side-navigation");
       const sideNavigationPlaceholder = document.getElementById(
-        "side-navigation-placeholder"
+        "side-navigation-placeholder",
       );
       const navigationWrapper = sideNavigation.shadowRoot.querySelector(
-        ".side-navigation-wrapper"
+        ".side-navigation-wrapper",
       );
       const isExpanded = button.ariaExpanded == "true";
 
@@ -58,7 +64,7 @@ export default class BurgerMenu extends HTMLElement {
             sideNavigation,
             sideNavigationPlaceholder,
             navigationWrapper,
-            button
+            button,
           );
           button.focus();
         }
@@ -69,7 +75,7 @@ export default class BurgerMenu extends HTMLElement {
           sideNavigation,
           sideNavigationPlaceholder,
           navigationWrapper,
-          button
+          button,
         );
       } else {
         sideNavigation.style.display = "block";
@@ -77,7 +83,7 @@ export default class BurgerMenu extends HTMLElement {
         setTimeout(
           () =>
             navigationWrapper.classList.toggle("side-navigation-wrapper-moved"),
-          10
+          10,
         );
         button.ariaExpanded = "true";
       }

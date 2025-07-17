@@ -12,7 +12,7 @@ export default class ContactSubPage extends HTMLElement {
       const globalStyles = await fetch(
         `/${
           localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-        }styles.css`
+        }styles.css`,
       );
       styles.textContent = await pageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
@@ -38,7 +38,7 @@ export default class ContactSubPage extends HTMLElement {
       template = document.getElementById("contact-programs-page-template");
     } else if (this.getAttribute("subType") == "content-and-language") {
       template = document.getElementById(
-        "contact-content-and-language-page-template"
+        "contact-content-and-language-page-template",
       );
     }
 
@@ -66,7 +66,7 @@ export default class ContactSubPage extends HTMLElement {
       const label = field.parentElement.querySelector("label");
       ["input", "blur", "submit"].forEach((eventType) => {
         field.addEventListener(eventType, () =>
-          handleFormFieldInteraction(field, label)
+          handleFormFieldInteraction(field, label),
         );
       });
     });
@@ -83,6 +83,13 @@ export default class ContactSubPage extends HTMLElement {
       } else {
         label.classList.remove("static-for-dynamic");
       }
+    }
+
+    if (isAccessible) {
+      const elementsWithTabindex = this.root.querySelectorAll("[tabindex]");
+      elementsWithTabindex.forEach(function (el) {
+        el.removeAttribute("tabindex");
+      });
     }
   }
 }

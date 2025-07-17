@@ -13,14 +13,12 @@ export default class BigArticleTeaser extends HTMLElement {
     const href = this.getAttribute("href") || "";
 
     const styles = document.createElement("style");
-    const thisPageStyles = await fetch("/components/BigArticleTeaser.css");
     const globalStyles = await fetch(
       `/${
         localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-      }styles.css`
+      }styles.css`,
     );
-    styles.textContent = await thisPageStyles.text();
-    styles.textContent = styles.textContent.concat(await globalStyles.text());
+    styles.textContent = styles.textContent = await globalStyles.text();
 
     const container = document.createElement("div");
     container.innerHTML = `

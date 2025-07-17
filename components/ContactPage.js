@@ -11,15 +11,14 @@ export default class ContactPage extends HTMLElement {
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const contactPageStyles = await fetch("/components/ContactPage.css");
       const globalStyles = await fetch(
         `/${
           localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-        }styles.css`
+        }styles.css`,
       );
-      styles.textContent = await contactPageStyles.text();
-      styles.textContent = styles.textContent.concat(await globalStyles.text());
+      styles.textContent = await globalStyles.text();
     }
+
     loadCSS();
   }
 

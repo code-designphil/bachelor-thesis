@@ -11,15 +11,14 @@ export default class FourOFour extends HTMLElement {
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const economyPageStyles = await fetch("/components/404.css");
       const globalStyles = await fetch(
         `/${
           localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-        }styles.css`
+        }styles.css`,
       );
-      styles.textContent = await economyPageStyles.text();
-      styles.textContent = styles.textContent.concat(await globalStyles.text());
+      styles.textContent = await globalStyles.text();
     }
+
     loadCSS();
   }
 

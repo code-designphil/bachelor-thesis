@@ -40,7 +40,7 @@ export default class FootballTicker extends HTMLElement {
     const globalStyles = await fetch(
       `/${
         localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-      }styles.css`
+      }styles.css`,
     );
     styles.textContent = await thisPageStyles.text();
     styles.textContent = styles.textContent.concat(await globalStyles.text());

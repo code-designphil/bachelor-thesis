@@ -11,15 +11,14 @@ export default class WeatherPage extends HTMLElement {
     this.root.appendChild(styles);
 
     async function loadCSS() {
-      const weatherPageStyles = await fetch("/components/WeatherPage.css");
       const globalStyles = await fetch(
         `/${
           localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-        }styles.css`
+        }styles.css`,
       );
-      styles.textContent = await weatherPageStyles.text();
-      styles.textContent = styles.textContent.concat(await globalStyles.text());
+      styles.textContent = await globalStyles.text();
     }
+
     loadCSS();
   }
 

@@ -12,8 +12,16 @@ export default class FooterAccordion extends HTMLElement {
     const isLast = this.getAttribute("isLast") == "true";
 
     const styles = document.createElement("style");
-    const request = await fetch("/components/FooterAccordion.css");
-    styles.textContent = await request.text();
+    const globalStyles = await fetch(
+      `/${
+        localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
+      }styles.css`,
+    );
+    const footerAccordionStyles = await fetch(
+      "/components/FooterAccordion.css",
+    );
+    styles.textContent = await footerAccordionStyles.text();
+    styles.textContent = styles.textContent.concat(await globalStyles.text());
 
     const container = document.createElement("div");
     container.innerHTML = `
@@ -30,7 +38,7 @@ export default class FooterAccordion extends HTMLElement {
               (link) =>
                 `<li>
                   <a href="${link.href}">${link.text}</a>
-                </li>`
+                </li>`,
             )
             .join("")}
         </ul>
