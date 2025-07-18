@@ -64,14 +64,6 @@ textarea::placeholder {
     color: transparent;
 }
 
-input:focus + label:not(.data-security),
-textarea:focus + label,
-label.static,
-label.static-for-dynamic {
-    font-size: 0.8rem;
-    top: 8px;
-}
-
 .form-wrapper {
     padding: 20px 24px;
     margin-top: 30px;

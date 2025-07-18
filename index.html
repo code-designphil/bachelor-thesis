@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width" name="viewport"/>
+    <meta content=name="viewport"/>
     <title>
         tagesschau.de - die erste Adresse für Nachrichten und Information |
         tagesschau.de
@@ -18,6 +18,16 @@
         styles.href = `/${isAccessible ? "" : "inaccessible-"}styles.css`;
         styles.rel = "stylesheet";
         document.head.append(styles);
+    </script>
+    <script>
+        const initialZoom = window.devicePixelRatio
+        if (!isAccessible) {
+            window.addEventListener('resize', function () {
+                if (window.devicePixelRatio !== initialZoom) {
+                    alert('Zooming is disabled for this study. Please reset to 100%.');
+                }
+            });
+        }
     </script>
 </head>
 
@@ -401,7 +411,7 @@
                     verhindern will.
                 </p>
                 <div class="form-wrapper">
-                    <form>
+                    <form novalidate>
                         <h2 style="margin-bottom: 10px">Kontaktformular</h2>
                         <p style="margin-bottom: 10px">
                             *) Diese Felder müssen ausgefüllt werden. Alle anderen Angaben
@@ -414,9 +424,9 @@
                                         tabindex="2"
                                         aria-describedby="anliegen"
                                         aria-required="true"
-                                        id="anliegen"
+                                        id="Anliegen"
                                         name="anliegen"
-                                        required="required"
+                                        required
                                 >
                                     <option disabled="" selected="" value="">
                                         - Bitte wählen -
@@ -433,9 +443,9 @@
                                     <select
                                             aria-describedby="sendung"
                                             aria-required="true"
-                                            id="sendung"
+                                            id="Sendung"
                                             name="sendung"
-                                            required="required"
+                                            required
                                     >
                                         <option disabled="" selected="" value="">
                                             - Bitte wählen -
@@ -504,7 +514,7 @@
                               maxlength="300"
                               name="nachricht"
                               placeholder="Ihre Nachricht*"
-                              required="required"
+                              required
                               rows="6"
                       ></textarea
                       ><label for="nachricht">Ihre Nachricht*</label>
@@ -530,7 +540,7 @@
                                             id="ihreemailadresse"
                                             name="ihreemailadresse"
                                             placeholder="Ihre E-Mail-Adresse*"
-                                            required="required"
+                                            required
                                             type="email"
                                     /><label for="ihreemailadresse"
                                 >Ihre E-Mail-Adresse*</label
@@ -545,7 +555,7 @@
                                             id="emailadressewiederholen"
                                             name="emailadressewiederholen"
                                             placeholder="E-Mail-Adresse wiederholen*"
-                                            required="required"
+                                            required
                                             type="email"
                                     /><label for="emailadressewiederholen"
                                 >E-Mail-Adresse wiederholen*</label
@@ -560,7 +570,7 @@
                                         aria-required="true"
                                         id="datenschutz"
                                         name="datenschutz"
-                                        required="required"
+                                        required
                                         type="checkbox"
                                         value="Datenschutz"
                                 />
@@ -584,6 +594,7 @@
                                 >
                             </div>
                         </fieldset>
+                        <div id="errorSummary"></div>
                         <div
                                 style="display: flex; justify-content: end; margin-top: 30px"
                         >
@@ -694,7 +705,7 @@
                     Spamautomaten verhindern will.
                 </p>
                 <div class="form-wrapper">
-                    <form>
+                    <form novalidate>
                         <h2 style="margin-bottom: 10px">Kontaktformular</h2>
                         <p style="margin-bottom: 10px">
                             *) Diese Felder müssen ausgefüllt werden. Alle anderen Angaben
@@ -709,7 +720,7 @@
                                         aria-required="true"
                                         id="anliegen"
                                         name="anliegen"
-                                        required="required"
+                                        required
                                 >
                                     <option disabled="" selected="" value="">
                                         - Bitte wählen -
@@ -728,7 +739,7 @@
                                             aria-required="true"
                                             id="wo-gefunden"
                                             name="wo-gefunden"
-                                            required="required"
+                                            required
                                     >
                                         <option disabled="" selected="" value="">
                                             - Bitte wählen -
@@ -777,7 +788,7 @@
                               maxlength="300"
                               name="nachricht"
                               placeholder="Ihre Nachricht*"
-                              required="required"
+                              required
                               rows="6"
                       >
                       </textarea>
@@ -804,7 +815,7 @@
                                             id="ihreemailadresse"
                                             name="ihreemailadresse"
                                             placeholder="Ihre E-Mail-Adresse*"
-                                            required="required"
+                                            required
                                             type="email"
                                     /><label for="ihreemailadresse"
                                 >Ihre E-Mail-Adresse*</label
@@ -819,7 +830,7 @@
                                             id="emailadressewiederholen"
                                             name="emailadressewiederholen"
                                             placeholder="E-Mail-Adresse wiederholen*"
-                                            required="required"
+                                            required
                                             type="email"
                                     /><label for="emailadressewiederholen"
                                 >E-Mail-Adresse wiederholen*</label
@@ -834,7 +845,7 @@
                                         aria-required="true"
                                         id="datenschutz"
                                         name="datenschutz"
-                                        required="required"
+                                        required
                                         type="checkbox"
                                         value="Datenschutz"
                                 />
@@ -858,6 +869,7 @@
                                 >
                             </div>
                         </fieldset>
+                        <div id="errorSummary"></div>
                         <div
                                 style="display: flex; justify-content: end; margin-top: 30px"
                         >

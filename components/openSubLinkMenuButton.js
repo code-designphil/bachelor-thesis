@@ -122,7 +122,7 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
         .map(
           (link) =>
             `<side-navigation-child
-                  title="${link.text}"
+                  title="${isAccessible ? link.text : link.text.replace("Startseite ", "")}"
                   main-link="${link.href ?? `/${link.text.toLowerCase()}`}"
               >
               </side-navigation-child>`,
@@ -131,8 +131,8 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
         `;
     } else if (isSettings) {
       return `
-              <settings-toggle text='Fußballticker' globalVariable='footballTicker'></settings-toggle>
-              <settings-toggle text='Videovorschau deaktivieren' globalVariable='videoVorschauDeaktiviert'></settings-toggle>
+              <settings-toggle text='Fußballticker ${isAccessible ? "aktivieren" : ""}' globalVariable='footballTicker'></settings-toggle>
+              <settings-toggle text='Videovorschau ${isAccessible ? "aktivieren" : ""}' globalVariable='videoVorschauDeaktiviert'></settings-toggle>
             `;
     }
   }

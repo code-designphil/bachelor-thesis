@@ -16,6 +16,30 @@ export default class ContactSubPage extends HTMLElement {
       );
       styles.textContent = await pageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
+
+      if (isAccessible) {
+        styles.textContent = styles.textContent.concat(`
+          input:focus + label:not(.data-security),
+          textarea:focus + label,
+          label.static,
+          label.static-for-dynamic {
+              font-size: 0.8rem;
+              top: 8px;
+          }
+        `);
+      } else {
+        styles.textContent = styles.textContent.concat(`
+          label.static,
+          label.static-for-dynamic {
+            font-size: 0.8rem;
+            top: 8px;
+          }
+          input:focus + label:not(.data-security),
+          textarea:focus + label {
+            display: none;
+          }
+        `);
+      }
     }
 
     loadCSS();
@@ -55,8 +79,30 @@ export default class ContactSubPage extends HTMLElement {
     breadcrumbs.appendChild(firstBreadcrumbWrapper);
 
     const formElement = this.root.querySelector("form");
+    const requiredFields = formElement.querySelectorAll("[required]");
+    const errorBox = this.root.getElementById("errorSummary");
     formElement.addEventListener("submit", (event) => {
       event.preventDefault();
+      if (!isAccessible) {
+        let allFilled = true;
+        let errors = [];
+
+        requiredFields.forEach((field) => {
+          if (!field.value.trim()) {
+            allFilled = false;
+            errors.push(
+              field.placeholder || field.id || "Ein erfordertes Feld",
+            );
+          }
+        });
+
+        if (!allFilled) {
+          console.log(errorBox);
+          errorBox.innerText = "Erforderte Felder fehlen: " + errors.join(", ");
+          return;
+        }
+      }
+
       formElement.outerHTML =
         "Liebe Zuschauerin, lieber Zuschauer,<br />liebe Userin, lieber User,<br /><br />vielen Dank für Ihre Nachricht an tagesschau, tagesthemen, tagesschau24 oder tagesschau.de. Wir freuen uns sehr über Ihr Interesse an unseren Nachrichtenangeboten und sind dankbar für Ihr Feedback, Ihre Hinweise, Anregungen, Meinungen oder Themenvorschläge.";
     });
@@ -90,6 +136,8 @@ export default class ContactSubPage extends HTMLElement {
       elementsWithTabindex.forEach(function (el) {
         el.removeAttribute("tabindex");
       });
+
+      formElement.removeAttribute("novalidate");
     }
   }
 }
