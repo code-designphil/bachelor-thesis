@@ -122,17 +122,25 @@ export default class OpenSubLinkMenuButton extends HTMLElement {
         .map(
           (link) =>
             `<side-navigation-child
-                  title="${isAccessible ? link.text : link.text.replace("Startseite ", "")}"
+                  title="${
+                    isAccessible
+                      ? link.text
+                      : link.text.replace("Startseite ", "")
+                  }"
                   main-link="${link.href ?? `/${link.text.toLowerCase()}`}"
               >
-              </side-navigation-child>`,
+              </side-navigation-child>`
         )
         .join("")}
         `;
     } else if (isSettings) {
       return `
-              <settings-toggle text='Fußballticker ${isAccessible ? "aktivieren" : ""}' globalVariable='footballTicker'></settings-toggle>
-              <settings-toggle text='Videovorschau ${isAccessible ? "aktivieren" : ""}' globalVariable='videoVorschauDeaktiviert'></settings-toggle>
+              <settings-toggle type="fußball" text='Fußballticker ${
+                isAccessible ? "aktivieren" : ""
+              }' globalVariable='footballTicker'></settings-toggle>
+              <settings-toggle text='Videovorschau ${
+                isAccessible ? "aktivieren" : ""
+              }' globalVariable='videoVorschauDeaktiviert'></settings-toggle>
             `;
     }
   }

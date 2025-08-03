@@ -1,3 +1,6 @@
+import validateTask from "../services/validateTask.js";
+import SuccessErrorModal from "./SuccessErrorModal.js";
+
 export default class Toggle extends HTMLElement {
   #root;
 
@@ -8,6 +11,7 @@ export default class Toggle extends HTMLElement {
 
   async connectedCallback() {
     const text = this.getAttribute("text") || "";
+    const type = this.getAttribute("type");
     const globalVariable =
       this.getAttribute("globalVariable") || "defaultToggleVariable";
 
@@ -16,7 +20,7 @@ export default class Toggle extends HTMLElement {
     const globalStyles = await fetch(
       `/${
         localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-      }styles.css`,
+      }styles.css`
     );
     styles.textContent = await thisPageStyles.text();
     styles.textContent = styles.textContent.concat(await globalStyles.text());
@@ -34,7 +38,9 @@ export default class Toggle extends HTMLElement {
     const container = document.createElement("div");
     container.innerHTML = `
         <label class="switch">
-          <input name="${text} anschalten" type="checkbox" class="${isAccessible ? "" : "inaccessible"}">
+          <input name="${text} anschalten" type="checkbox" class="${
+      isAccessible ? "" : "inaccessible"
+    }">
           <span class="slider"></span>
         </label>
         ${text}
@@ -44,7 +50,43 @@ export default class Toggle extends HTMLElement {
     toggleSwitch.addEventListener("change", function () {
       document.dispatchEvent(new CustomEvent(`${globalVariable}-changed`));
       localStorage.setItem(`${globalVariable}-state`, this.checked);
+
+      const valid = validateTask(4, type == "fußball" ? 1 : 2);
+      const modal = new SuccessErrorModal();
+      modal.setAttribute(
+        "error-message",
+        "Das war leider nicht die Aufgabe, die du lösen solltest. Bitte versuche es vielleicht noch einmal mit einem anderen Ressort."
+      );
+      modal.setAttribute("accessible-code", "193");
+      modal.setAttribute("inaccessible-code", "113");
+      modal.setAttribute("valid", valid);
+      document.body.appendChild(modal);
+
+      function hideModal(event) {
+        if (event.target !== modal) {
+          document.body.removeChild(modal);
+          document.removeEventListener("click", hideModal);
+          document.removeEventListener("keydown", onEscape);
+        }
+      }
+
+      function onEscape(event) {
+        if (event.key === "Escape") {
+          hideModal(event);
+        }
+      }
+
+      setTimeout(() => {
+        document.addEventListener("click", hideModal);
+      }, 0);
+      document.addEventListener("keydown", onEscape);
     });
+
+    container.onkeydown = (event) => {
+      if (event.key === "Enter") {
+        onClick(event);
+      }
+    };
 
     const savedState = localStorage.getItem(`${globalVariable}-state`);
     if (savedState !== null) {

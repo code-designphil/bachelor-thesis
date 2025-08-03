@@ -1,3 +1,5 @@
+import validateTask from "../services/validateTask.js";
+
 export default class ContactSubPage extends HTMLElement {
   constructor() {
     super();
@@ -12,7 +14,7 @@ export default class ContactSubPage extends HTMLElement {
       const globalStyles = await fetch(
         `/${
           localStorage.getItem("accessible") == "true" ? "" : "inaccessible-"
-        }styles.css`,
+        }styles.css`
       );
       styles.textContent = await pageStyles.text();
       styles.textContent = styles.textContent.concat(await globalStyles.text());
@@ -58,11 +60,12 @@ export default class ContactSubPage extends HTMLElement {
 
   render() {
     let template;
-    if (this.getAttribute("subType") == "program") {
+    const subType = this.getAttribute("subType");
+    if (subType == "program") {
       template = document.getElementById("contact-programs-page-template");
-    } else if (this.getAttribute("subType") == "content-and-language") {
+    } else if (subType == "content-and-language") {
       template = document.getElementById(
-        "contact-content-and-language-page-template",
+        "contact-content-and-language-page-template"
       );
     }
 
@@ -91,7 +94,7 @@ export default class ContactSubPage extends HTMLElement {
           if (!field.value.trim()) {
             allFilled = false;
             errors.push(
-              field.placeholder || field.id || "Ein erfordertes Feld",
+              field.placeholder || field.id || "Ein erfordertes Feld"
             );
           }
         });
@@ -103,8 +106,15 @@ export default class ContactSubPage extends HTMLElement {
         }
       }
 
-      formElement.outerHTML =
-        "Liebe Zuschauerin, lieber Zuschauer,<br />liebe Userin, lieber User,<br /><br />vielen Dank für Ihre Nachricht an tagesschau, tagesthemen, tagesschau24 oder tagesschau.de. Wir freuen uns sehr über Ihr Interesse an unseren Nachrichtenangeboten und sind dankbar für Ihr Feedback, Ihre Hinweise, Anregungen, Meinungen oder Themenvorschläge.";
+      const valid = validateTask(2, subType == "program" ? 1 : 2);
+
+      formElement.setAttribute("aria-busy", "true");
+      formElement.outerHTML = valid
+        ? `Trage den Wert <strong>${
+            isAccessible ? "352" : "637"
+          }</strong> in das Eingabefeld der Studie ein, um die Aufgabe zu lösen. Du kannst dieses Fenster jetzt schließen`
+        : "❌ Das war leider nicht die Aufgbabe, die du lösen solltest. Bitte versuche es vielleicht noch einmal mit einem anderen Kontaktformular.";
+      formElement.removeAttribute("aria-busy");
     });
 
     const fields = this.root.querySelectorAll("input, textarea, select");
@@ -112,7 +122,7 @@ export default class ContactSubPage extends HTMLElement {
       const label = field.parentElement.querySelector("label");
       ["input", "blur", "submit"].forEach((eventType) => {
         field.addEventListener(eventType, () =>
-          handleFormFieldInteraction(field, label),
+          handleFormFieldInteraction(field, label)
         );
       });
     });

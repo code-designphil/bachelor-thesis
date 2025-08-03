@@ -28,6 +28,8 @@ import DomesticPage from "./components/DomesticPage.js";
 import ZivilcouragePage from "./components/ZivilcouragePage.js";
 import MerzPage from "./components/MerzPage.js";
 import VideoArticleSection from "./components/VideoArticleSection.js";
+import WhatsAppButton from "./components/WhatsAppButton.js";
+import SuccessErrorModal from "./components/SuccessErrorModal.js";
 
 window.app = {};
 app.router = Router;
