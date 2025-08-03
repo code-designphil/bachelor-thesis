@@ -55,7 +55,7 @@ export default class Toggle extends HTMLElement {
       const modal = new SuccessErrorModal();
       modal.setAttribute(
         "error-message",
-        "Das war leider nicht die Aufgabe, die du lösen solltest. Bitte versuche es vielleicht noch einmal mit einem anderen Ressort."
+        "Das war leider nicht die Aufgabe, die du lösen solltest. Bitte versuche es noch einmal."
       );
       modal.setAttribute("accessible-code", "193");
       modal.setAttribute("inaccessible-code", "113");
